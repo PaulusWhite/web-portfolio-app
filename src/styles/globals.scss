@@ -1,0 +1,38 @@
+@import "./common.scss";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: $mainColor;
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    22deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(47, 49, 52, 0.999019676229867) 90%
+  );
+  background: -webkit-linear-gradient(
+    22deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(47, 49, 52, 0.999019676229867) 90%
+  );
+  background: linear-gradient(22deg, rgba(0, 0, 0, 1) 0%, rgba(47, 49, 52, 0.999019676229867) 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#2f3134",GradientType=1);
+}
