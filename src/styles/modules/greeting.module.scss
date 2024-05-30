@@ -1,0 +1,18 @@
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  width: 100%;
+  max-width: 60rem;
+  min-height: 100vh;
+
+  .photo-frame {
+    flex-shrink: 0;
+    position: relative;
+    width: 350px;
+    img {
+      width: 100%;
+    }
+  }
+}
