@@ -1,0 +1,21 @@
+@import "./../../common.scss";
+
+.heading {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+
+  .index {
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 15rem;
+    height: 0.1rem;
+    margin-left: 2rem;
+    background-color: $mainColor;
+  }
+}
