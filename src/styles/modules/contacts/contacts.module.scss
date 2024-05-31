@@ -1,0 +1,21 @@
+@import "./../../common.scss";
+
+.contacts {
+  @include flexColumn;
+
+  .form-field {
+    display: flex;
+
+    form {
+      @include flexColumn;
+    }
+  }
+
+  footer {
+    @include flexColumn;
+
+    .contacts-list {
+      display: flex;
+    }
+  }
+}
