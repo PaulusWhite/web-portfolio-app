@@ -1,5 +1,9 @@
 import style from "./../../../styles/modules/contacts/contacts.module.scss";
 
+//Icons
+import githubIcon from "./../../../../public/contacts/github.svg";
+import inIcon from "./../../../../public/contacts/in.svg";
+
 //components
 import ContactItem from "./ContactItem";
 
@@ -35,12 +39,9 @@ const Contacts = () => (
 
     <footer>
       <ul className={style["contacts-list"]}>
-        <ContactItem logo="" link="" />
-        <ContactItem logo="" link="" />
-        <ContactItem logo="" link="" />
-        <ContactItem logo="" link="" />
+        <ContactItem logo={inIcon.src} link="https://www.linkedin.com/in/exactlypaul/" />
+        <ContactItem logo={githubIcon.src} link="https://github.com/PaulusWhite" />
       </ul>
-
       <button className={style["top-btn"]}>Back to top</button>
     </footer>
   </div>
