@@ -1,0 +1,7 @@
+@import "./../../common.scss";
+
+.project-item {
+  @include flexColumn;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,6 @@
+@import "./../../common.scss";
+
+.signItem {
+  @include flexColumn;
+  align-items: center;
+}
