@@ -5,7 +5,7 @@ import Image from "next/image";
 import photo from "./../../../public/photo.jpg";
 
 const About = () => (
-  <section className={style.about}>
+  <div className={style.about}>
     <div>
       <h1>Glad to see you at my digital place</h1>
 
@@ -28,7 +28,7 @@ const About = () => (
         quality={100}
       />
     </div>
-  </section>
+  </div>
 );
 
 export default About;

@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <main>
       <Section index={1} label="About me" content={<About />} />
-      {/* <Experience /> */}
+      <Section index={2} label="Experience" content={<Experience />} />
     </main>
   );
 };

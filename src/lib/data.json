@@ -1,0 +1,158 @@
+{
+  "radioList": [
+    {
+      "id": 0,
+      "label": "IT Academy",
+      "value": "itAcademy"
+    },
+    {
+      "id": 1,
+      "label": "Udemy",
+      "value": "udemy"
+    },
+    {
+      "id": 2,
+      "label": "The Rolling Scopes School",
+      "value": "rss"
+    },
+    {
+      "id": 2,
+      "label": "Self-study",
+      "value": "self"
+    }
+  ],
+  "descriptionList": {
+    "itAcademy": {
+      "title": "Studying at IT Academy",
+      "link": "",
+      "logo": "",
+      "duration": "December 2020 - August 2021",
+      "list": [
+        {
+          "id": 0,
+          "desc": "Writing semantic and valid HTML"
+        },
+        {
+          "id": 1,
+          "desc": "Using CSS for styling HTML"
+        },
+        {
+          "id": 2,
+          "desc": "Creating web forms of any kind of difficulty"
+        },
+        {
+          "id": 3,
+          "desc": "Cross-browser compatibility"
+        },
+        {
+          "id": 4,
+          "desc": "JavaScript basics: data types, variables, operators, conditionals, functions, events"
+        },
+        {
+          "id": 5,
+          "desc": "Advanced JavaScript: promises, async/await, OOP, function context, inheritance, destructuring, event loop, timers"
+        },
+        {
+          "id": 6,
+          "desc": "Browser: document, events, interfaces"
+        },
+        {
+          "id": 7,
+          "desc": "HTTP Networking in JavaScript: HTTP, DNS, HTTP Methods, HTTP Headers, JSON, AJAX, Fetch"
+        },
+        {
+          "id": 8,
+          "desc": "Development graduation project"
+        }
+      ]
+    },
+    "udemy": {
+      "title": "Taking courses on Udemy platform",
+      "link": "",
+      "logo": "",
+      "duration": "September 2022 - February 2022",
+      "list": [
+        {
+          "id": 0,
+          "desc": "React Basics: JSX, components, props, state, hooks"
+        },
+        {
+          "id": 1,
+          "desc": "React: creating Routes with React Router, using Context API"
+        },
+        {
+          "id": 2,
+          "desc": "React: side effects, rules of hooks, pure functions"
+        },
+        {
+          "id": 3,
+          "desc": "Redux Basics: how redux works, store structue, actions, subscriptions, dispatching"
+        },
+        {
+          "id": 4,
+          "desc": "Redux Toolkit: configuration store with toolkit; slices, reducers, middlewares"
+        },
+        {
+          "id": 5,
+          "desc": "Calling API with Redux, using react-redux"
+        },
+        {
+          "id": 6,
+          "desc": "TypeScript: types, interfaces, generics, advanced types"
+        }
+      ]
+    },
+    "rss": {
+      "title": "Studying at The Rolling Scopes School",
+      "link": "",
+      "logo": "",
+      "duration": "March 2023 - September 2023",
+      "list": [
+        {
+          "id": 0,
+          "desc": "Using Git,GitHub: repository (local, remote/origin), main commands, commit requirements"
+        },
+        {
+          "id": 1,
+          "desc": "CoreJS: basic and advanced JavaScript, JavaScript in browser, web storage API & cookies, design patterns"
+        },
+        {
+          "id": 2,
+          "desc": "Algorithms and data structures"
+        },
+        {
+          "id": 3,
+          "desc": "Modules in JavaScript and JavaScript Bundlers"
+        },
+        {
+          "id": 4,
+          "desc": "Development final eCommerce application in a team under the supervision of a team mentor"
+        }
+      ]
+    },
+    "self": {
+      "title": "Self-study",
+      "link": null,
+      "logo": "",
+      "duration": "November 2023 - Present",
+      "list": [
+        {
+          "id": 0,
+          "desc": "In-depth learning JavaScript by David Flanagan book"
+        },
+        {
+          "id": 1,
+          "desc": "Learning JavaScript Patterns and React Patterns by Lydia Hallie and Addy Osmani's materials"
+        },
+        {
+          "id": 2,
+          "desc": "Learning React Framework NextJS"
+        },
+        {
+          "id": 3,
+          "desc": "Learning continues ..."
+        }
+      ]
+    }
+  }
+}
