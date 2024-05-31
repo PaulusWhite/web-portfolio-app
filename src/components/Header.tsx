@@ -1,15 +1,20 @@
 import style from "./../styles/modules/header.module.scss";
 
 //Components
-import LinkPoint from "./LinkPoint";
+import NavLink from "./NavLink";
+import Logo from "./Logo";
 
 const Header = () => (
   <header className={style.header}>
-    <LinkPoint index={1} label="About" />
-    <LinkPoint index={2} label="Skills" />
-    <LinkPoint index={3} label="Experience" />
-    <LinkPoint index={4} label="Work" />
-    <LinkPoint index={5} label="Contacts" />
+    <Logo />
+
+    <nav>
+      <NavLink index={1} label="About" />
+      <NavLink index={2} label="Skills" />
+      <NavLink index={3} label="Experience" />
+      <NavLink index={4} label="Work" />
+      <NavLink index={5} label="Contacts" />
+    </nav>
   </header>
 );
 

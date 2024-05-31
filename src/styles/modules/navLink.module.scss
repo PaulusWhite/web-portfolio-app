@@ -1,0 +1,40 @@
+@import "../common.scss";
+
+.nav-link {
+  *,
+  &::after {
+    transition: 0.2s;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 1px;
+    margin-top: 0.5rem;
+    background-color: $auxiliaryColor;
+  }
+
+  @media (pointer: fine) {
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+
+      .link-point__label {
+        color: $auxiliaryColor;
+      }
+    }
+  }
+
+  .nav-link__index {
+    margin-right: 0.5rem;
+    color: $auxiliaryColor;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  .link-point__label {
+    font-size: 1.3rem;
+  }
+}

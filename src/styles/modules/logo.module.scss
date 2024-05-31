@@ -1,0 +1,42 @@
+@import "./../common.scss";
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  * {
+    transition: 0.2s;
+  }
+
+  @media (pointer: fine) {
+    &:hover {
+      .logo__logo-field {
+        .logo__label {
+          color: $auxiliaryColor;
+        }
+      }
+
+      .tag {
+        opacity: 1;
+      }
+    }
+  }
+
+  .logo__logo-field {
+    @include flexColumn;
+    align-items: center;
+
+    .logo__label {
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .tag {
+    position: relative;
+    opacity: 0;
+    font-size: 2.3rem;
+  }
+}
