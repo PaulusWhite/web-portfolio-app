@@ -5,8 +5,7 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  @include flexColumn;
   align-items: center;
   min-height: 100vh;
   margin: 0;

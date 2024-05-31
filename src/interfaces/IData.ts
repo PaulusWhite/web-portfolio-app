@@ -11,4 +11,10 @@ interface IDataDescItem {
   desc: string;
 }
 
-export type { IDataRadioValue, IDataRadioItem, IDataDescItem };
+interface ISkillItem {
+  id: number;
+  title: string;
+  logo: string;
+}
+
+export type { IDataRadioValue, IDataRadioItem, IDataDescItem, ISkillItem };

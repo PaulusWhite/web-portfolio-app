@@ -1,0 +1,10 @@
+@import "./../../common.scss";
+
+.skillItem {
+  @include flexColumn;
+  align-items: center;
+
+  .title {
+    margin-top: 1rem;
+  }
+}

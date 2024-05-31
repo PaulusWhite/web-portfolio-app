@@ -1,2 +1,7 @@
 $mainColor: #f8f7fc;
 $auxiliaryColor: none;
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}

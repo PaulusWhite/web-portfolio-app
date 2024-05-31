@@ -1,9 +1,10 @@
+@import "./../../common.scss";
+
 .experience {
   display: flex;
   gap: 5rem;
 
   .radioList {
-    display: flex;
-    flex-direction: column;
+    @include flexColumn;
   }
 }

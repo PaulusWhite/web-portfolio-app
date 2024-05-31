@@ -1,0 +1,15 @@
+@import "./../../common.scss";
+
+.skills {
+  @include flexColumn;
+
+  .core,
+  .other {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+
+    margin: 2rem 0;
+  }
+}
