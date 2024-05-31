@@ -2,13 +2,14 @@ import Image from "next/image";
 
 import style from "./../../../styles/modules/skills/skillItem.module.scss";
 
-import { ISkillItem } from "@/interfaces/IData";
+interface ISkillItemProps {
+  logo: typeof import("*.svg");
+  title: string;
+}
 
-type TSkillItemProps = Omit<ISkillItem, "id">;
-
-const SkillItem = (props: TSkillItemProps) => (
+const SkillItem = (props: ISkillItemProps) => (
   <li className={style.skillItem}>
-    <Image src="" alt="tech logo" width={90} height={90} />
+    <Image src={props.logo} alt="tech logo" width={90} height={90} />
     <span className={style.title}>{props.title}</span>
   </li>
 );

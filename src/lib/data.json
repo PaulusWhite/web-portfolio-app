@@ -160,84 +160,84 @@
       {
         "id": 0,
         "title": "JavaScript",
-        "logo": ""
+        "logo": "js.svg"
       },
       {
         "id": 1,
         "title": "TypeScript",
-        "logo": ""
+        "logo": "ts.svg"
       },
       {
         "id": 2,
         "title": "React",
-        "logo": ""
+        "logo": "react.svg"
       },
       {
         "id": 3,
         "title": "NextJS",
-        "logo": ""
+        "logo": "next.svg"
       },
       {
         "id": 4,
         "title": "Redux Toolkit",
-        "logo": ""
+        "logo": "redux.svg"
       },
       {
         "id": 5,
         "title": "HTML5",
-        "logo": ""
+        "logo": "html.svg"
       },
       {
         "id": 6,
         "title": "SASS",
-        "logo": ""
+        "logo": "sass.svg"
       },
       {
         "id": 7,
         "title": "Webpack",
-        "logo": ""
+        "logo": "webpack.svg"
       }
     ],
     "other": [
       {
         "id": 0,
         "title": "Git",
-        "logo": ""
+        "logo": "git.svg"
       },
       {
         "id": 1,
         "title": "Rest APIs",
-        "logo": ""
+        "logo": "api.svg"
       },
       {
         "id": 2,
         "title": "JSON",
-        "logo": ""
+        "logo": "json.svg"
       },
       {
         "id": 3,
         "title": "Firebase",
-        "logo": ""
+        "logo": "firebase.svg"
       },
       {
         "id": 4,
         "title": "BEM",
-        "logo": ""
+        "logo": "bem.svg"
       },
       {
         "id": 5,
         "title": "Responsive Design",
-        "logo": ""
+        "logo": "responsive.svg"
       },
       {
         "id": 6,
         "title": "Accessibility",
-        "logo": ""
+        "logo": "accessibility.svg"
       },
       {
         "id": 7,
         "title": "Linux",
-        "logo": ""
+        "logo": "linux.svg"
       }
     ]
   }

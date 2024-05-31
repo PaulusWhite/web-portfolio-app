@@ -16,17 +16,25 @@ const Skills = () => {
       <h3>Core Technologies I work with</h3>
 
       <ul className={style.core}>
-        {techs.map((techItem: ISkillItem) => (
-          <SkillItem key={techItem.id} title={techItem.title} logo={techItem.logo} />
-        ))}
+        {techs.map(async (techItem: ISkillItem) => {
+          const logo: typeof import("*.svg") = await import(
+            `./../../../../public/skills/${techItem.logo}`
+          );
+
+          return <SkillItem key={techItem.id} title={techItem.title} logo={logo} />;
+        })}
       </ul>
 
       <h3>Tools, methodologies, approaches and systems I work with</h3>
 
       <ul className={style.other}>
-        {other.map((otherItem: ISkillItem) => (
-          <SkillItem key={otherItem.id} title={otherItem.title} logo={otherItem.logo} />
-        ))}
+        {other.map(async (otherItem: ISkillItem) => {
+          const logo: typeof import("*.svg") = await import(
+            `./../../../../public/skills/${otherItem.logo}`
+          );
+
+          return <SkillItem key={otherItem.id} title={otherItem.title} logo={logo} />;
+        })}
       </ul>
     </div>
   );
