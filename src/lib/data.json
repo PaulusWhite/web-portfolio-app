@@ -154,5 +154,91 @@
         }
       ]
     }
+  },
+  "skills": {
+    "techs": [
+      {
+        "id": 0,
+        "title": "JavaScript",
+        "logo": ""
+      },
+      {
+        "id": 1,
+        "title": "TypeScript",
+        "logo": ""
+      },
+      {
+        "id": 2,
+        "title": "React",
+        "logo": ""
+      },
+      {
+        "id": 3,
+        "title": "NextJS",
+        "logo": ""
+      },
+      {
+        "id": 4,
+        "title": "Redux Toolkit",
+        "logo": ""
+      },
+      {
+        "id": 5,
+        "title": "HTML5",
+        "logo": ""
+      },
+      {
+        "id": 6,
+        "title": "SASS",
+        "logo": ""
+      },
+      {
+        "id": 7,
+        "title": "Webpack",
+        "logo": ""
+      }
+    ],
+    "other": [
+      {
+        "id": 0,
+        "title": "Git",
+        "logo": ""
+      },
+      {
+        "id": 1,
+        "title": "Rest APIs",
+        "logo": ""
+      },
+      {
+        "id": 2,
+        "title": "JSON",
+        "logo": ""
+      },
+      {
+        "id": 3,
+        "title": "Firebase",
+        "logo": ""
+      },
+      {
+        "id": 4,
+        "title": "BEM",
+        "logo": ""
+      },
+      {
+        "id": 5,
+        "title": "Responsive Design",
+        "logo": ""
+      },
+      {
+        "id": 6,
+        "title": "Accessibility",
+        "logo": ""
+      },
+      {
+        "id": 7,
+        "title": "Linux",
+        "logo": ""
+      }
+    ]
   }
 }
