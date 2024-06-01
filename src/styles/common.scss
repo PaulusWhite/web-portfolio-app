@@ -1,7 +1,8 @@
 $mainColor: #e8e8e8;
-$auxiliaryColor: #800020;
+$secondColor: #800020;
 
 @mixin flexColumn {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }

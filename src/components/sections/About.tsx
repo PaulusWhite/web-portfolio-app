@@ -6,10 +6,10 @@ import photo from "./../../../public/photo.jpg";
 
 const About = () => (
   <div className={style.about}>
-    <div>
-      <h1>Glad to see you at my digital place</h1>
+    <div className={style.speech}>
+      <p>Glad to see you at my digital place!</p>
 
-      <p>Hi, I'm Paul. I've been involved in front-end development more than 1.5 years.</p>
+      <p>I'm Paul and I've been involved in front-end development more than 1.5 years.</p>
       <p>
         I spend my time on specializing in building complex web applications with up-to-date
         technologies to create the best user experience.
@@ -19,14 +19,7 @@ const About = () => (
     </div>
 
     <div className={style["photo-frame"]}>
-      <Image
-        src={photo.src}
-        alt="my-photo"
-        width={350}
-        height={350}
-        priority={true}
-        quality={100}
-      />
+      <Image src={photo.src} alt="my-photo" fill={true} sizes="100%" priority={true} quality={85} />
     </div>
   </div>
 );

@@ -7,10 +7,20 @@
   width: 100%;
   max-width: 60rem;
 
+  .speech {
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
   .photo-frame {
     flex-shrink: 0;
     position: relative;
     width: 350px;
+    height: 350px;
+    border: solid $mainColor 2px;
+    border-radius: 0.3rem;
+    overflow: hidden;
 
     img {
       width: 100%;
