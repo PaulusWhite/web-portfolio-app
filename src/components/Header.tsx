@@ -9,11 +9,11 @@ const Header = () => (
     <Logo />
 
     <nav>
-      <NavLink index={1} label="About" />
-      <NavLink index={2} label="Skills" />
-      <NavLink index={3} label="Experience" />
-      <NavLink index={4} label="Work" />
-      <NavLink index={5} label="Contacts" />
+      <NavLink index={1} label="About" anchor="about" />
+      <NavLink index={2} label="Skills" anchor="skills" />
+      <NavLink index={3} label="Experience" anchor="experience" />
+      <NavLink index={4} label="Work" anchor="work" />
+      <NavLink index={5} label="Contacts" anchor="contacts" />
     </nav>
   </header>
 );

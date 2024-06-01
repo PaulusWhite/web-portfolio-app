@@ -9,11 +9,11 @@ import Contacts from "@/components/sections/contacts/Contacts";
 const Main = () => {
   return (
     <main>
-      <Section index={1} label="About me" content={<About />} />
-      <Section index={2} label="Skills" content={<Skills />} />
-      <Section index={3} label="Experience" content={<Experience />} />
-      <Section index={4} label="Work" content={<Work />} />
-      <Section index={5} label="Contacts" content={<Contacts />} />
+      <Section index={1} label="About me" id="about" content={<About />} />
+      <Section index={2} label="Skills" id="skills" content={<Skills />} />
+      <Section index={3} label="Experience" id="experience" content={<Experience />} />
+      <Section index={4} label="Work" id="work" content={<Work />} />
+      <Section index={5} label="Contacts" id="contacts" content={<Contacts />} />
     </main>
   );
 };
