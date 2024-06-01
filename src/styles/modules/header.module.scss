@@ -1,12 +1,14 @@
 .header {
   position: fixed;
   z-index: 1;
+  top: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   padding: 2rem;
   backdrop-filter: blur(0.5rem);
+  transition: 0.8s;
 
   nav {
     display: flex;
@@ -14,4 +16,9 @@
     gap: 2rem;
     margin-left: auto;
   }
+}
+
+//css mod for header
+.hide {
+  top: -10rem;
 }
