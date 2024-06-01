@@ -1,0 +1,13 @@
+@import "./../common.scss";
+
+.flashlight {
+  position: absolute;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  box-shadow: 0 0 5rem 2rem rgba($mainColor, 0.3);
+}

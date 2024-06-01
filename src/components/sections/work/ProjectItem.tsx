@@ -30,7 +30,7 @@ const ProjectItem = (props: IProjectItemProps) => {
 
   return (
     <div className={style["project-item"]}>
-      <Image src={img} fill={true} objectFit="cover" sizes="100%" alt="app-preview" />
+      <Image src={img} fill={true} sizes="100%" alt="app-preview" />
 
       <div className={style["pop-up"]}>
         <span className={style.title}>{title}</span>

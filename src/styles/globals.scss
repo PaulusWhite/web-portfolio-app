@@ -1,6 +1,8 @@
 @import "./common.scss";
 
 html {
+  background-color: $darkColor;
+  background-attachment: fixed;
   font-size: 16px;
   letter-spacing: 1.5px;
   scroll-behavior: smooth;
@@ -8,13 +10,13 @@ html {
 
 body {
   @include flexColumn;
+  position: relative;
+  z-index: 1;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   padding: 0 1.5rem;
   color: $mainColor;
-  background-color: $darkColor;
-  background-attachment: fixed;
 
   *::selection {
     color: $mainColor;
