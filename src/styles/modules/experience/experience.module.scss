@@ -1,10 +1,59 @@
 @import "./../../common.scss";
 
+@mixin pseudoEl {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0.1rem;
+}
+
 .experience {
   display: flex;
   gap: 5rem;
+  height: 35rem;
 
   .radioList {
     @include flexColumn;
+    position: relative;
+    align-self: baseline;
+    align-items: flex-start;
+    margin-right: 1rem;
+
+    &::before {
+      @include pseudoEl;
+      height: 100%;
+      background-color: rgba($mainColor, 0.4);
+    }
+
+    &::after {
+      @include pseudoEl;
+      height: 25%;
+      background-color: $secondColor;
+      transition: 0.2s;
+    }
+
+    &:has(label:nth-child(1) > input[type="radio"]:checked) {
+      &::after {
+        top: 0;
+      }
+    }
+
+    &:has(label:nth-child(2) > input[type="radio"]:checked) {
+      &::after {
+        top: 25%;
+      }
+    }
+
+    &:has(label:nth-child(3) > input[type="radio"]:checked) {
+      &::after {
+        top: 50%;
+      }
+    }
+
+    &:has(label:nth-child(4) > input[type="radio"]:checked) {
+      &::after {
+        top: 75%;
+      }
+    }
   }
 }

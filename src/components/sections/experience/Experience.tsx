@@ -11,7 +11,7 @@ import { IDataRadioItem, IDataRadioValue } from "@/interfaces/IData";
 
 //components
 import DescriptionList from "./DescriptionList";
-import InputBtn from "./InputBtn";
+import RadioBtn from "./RadioBtn";
 
 const Experience = () => {
   const radioList: IDataRadioItem[] = data.radioList as IDataRadioItem[];
@@ -26,7 +26,7 @@ const Experience = () => {
           const isChecked: boolean = activeInput === radioItem.value;
 
           return (
-            <InputBtn
+            <RadioBtn
               key={radioItem.id}
               label={radioItem.label}
               value={radioItem.value}

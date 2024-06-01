@@ -10,6 +10,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  padding: 0 1.5rem;
   color: $mainColor;
   background-color: $darkColor;
   background-attachment: fixed;
@@ -19,6 +20,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   outline: none;
+}
+
+input[type="radio"] {
+  display: none;
 }
 
 li {

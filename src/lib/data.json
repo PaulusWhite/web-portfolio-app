@@ -23,9 +23,9 @@
   ],
   "descriptionList": {
     "itAcademy": {
-      "title": "Studying at IT Academy",
-      "link": "",
-      "logo": "",
+      "process": "Studying at",
+      "title": "IT Academy",
+      "link": "https://www.it-academy.by/course/front-end-developer/",
       "duration": "December 2020 - August 2021",
       "list": [
         {
@@ -67,9 +67,9 @@
       ]
     },
     "udemy": {
-      "title": "Taking courses on Udemy platform",
-      "link": "",
-      "logo": "",
+      "process": "Taking courses on",
+      "title": "Udemy platform",
+      "link": "https://www.udemy.com/course/react-front-to-back-2022/",
       "duration": "September 2022 - February 2022",
       "list": [
         {
@@ -103,9 +103,9 @@
       ]
     },
     "rss": {
-      "title": "Studying at The Rolling Scopes School",
-      "link": "",
-      "logo": "",
+      "process": "Studying at",
+      "title": "The Rolling Scopes School",
+      "link": "https://rs.school/courses/javascript",
       "duration": "March 2023 - September 2023",
       "list": [
         {
@@ -131,14 +131,14 @@
       ]
     },
     "self": {
+      "process": "",
       "title": "Self-study",
-      "link": null,
-      "logo": "",
+      "link": "",
       "duration": "November 2023 - Present",
       "list": [
         {
           "id": 0,
-          "desc": "In-depth learning JavaScript by David Flanagan book"
+          "desc": "In-depth learning JavaScript by David Flanagan's materials"
         },
         {
           "id": 1,
@@ -146,11 +146,11 @@
         },
         {
           "id": 2,
-          "desc": "Learning React Framework NextJS"
+          "desc": "Learning NextJS React framework"
         },
         {
           "id": 3,
-          "desc": "Learning continues ..."
+          "desc": "Learning will never stop ..."
         }
       ]
     }

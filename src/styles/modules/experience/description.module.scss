@@ -2,4 +2,29 @@
 
 .description {
   @include flexColumn;
+  width: 100%;
+  max-width: 40rem;
+
+  h3 {
+    width: 100%;
+    margin-top: unset;
+    font-size: 1.2rem;
+
+    .link {
+      @include underLine;
+      display: inline-block;
+      margin-left: 0.1rem;
+      color: $secondColor;
+    }
+  }
+
+  .duration {
+    width: 100%;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .list {
+    margin-top: 2rem;
+  }
 }

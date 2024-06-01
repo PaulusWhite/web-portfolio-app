@@ -7,21 +7,32 @@ import BulletPoint from "./BulltetPoint";
 import { IDataDescItem } from "@/interfaces/IData";
 
 interface IDescriptionListProps {
+  process: string;
   title: string;
   duration: string;
-  logo: string;
+  link: string;
   list: IDataDescItem[];
 }
 
 const DescriptionList = (props: IDescriptionListProps) => {
-  const { title, duration, logo, list } = props;
+  const { process, title, duration, list, link } = props;
 
   return (
     <div className={style.description}>
-      <h3>{title}</h3>
-      <p>{duration}</p>
+      <h3>
+        {process}{" "}
+        {process ? (
+          <a className={style.link} href={link} target="blank">
+            @{title}
+          </a>
+        ) : (
+          title
+        )}
+      </h3>
 
-      <ul>
+      <p className={style.duration}>{duration}</p>
+
+      <ul className={style.list}>
         {list.map((descItem: IDataDescItem) => (
           <BulletPoint key={descItem.id} description={descItem.desc} />
         ))}

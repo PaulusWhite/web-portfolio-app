@@ -1,0 +1,19 @@
+@import "./../../common.scss";
+
+.bullet-point {
+  position: relative;
+  padding: 0.6rem 0 0.6rem 2rem;
+  font-size: 1.1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $secondColor;
+    border-radius: 100%;
+  }
+}

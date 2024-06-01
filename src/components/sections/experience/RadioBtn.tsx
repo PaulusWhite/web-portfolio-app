@@ -1,15 +1,19 @@
+import Image from "next/image";
+
+import style from "./../../../styles/modules/experience/radioBtn.module.scss";
+
 //interfaces
 import { IDataRadioValue } from "@/interfaces/IData";
 
-interface IInputBtnProps {
+interface IRadioBtnProps {
   label: string;
   value: IDataRadioValue;
   isChecked?: boolean;
   setInput: (newValue: IDataRadioValue) => void;
 }
 
-const InputBtn = (props: IInputBtnProps) => (
-  <label>
+const RadioBtn = (props: IRadioBtnProps) => (
+  <label className={style["radio-btn"]}>
     <input
       type="radio"
       name="radioList"
@@ -21,4 +25,4 @@ const InputBtn = (props: IInputBtnProps) => (
   </label>
 );
 
-export default InputBtn;
+export default RadioBtn;
