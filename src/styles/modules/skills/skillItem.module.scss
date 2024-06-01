@@ -3,6 +3,22 @@
 .skillItem {
   @include flexColumn;
   align-items: center;
+  cursor: pointer;
+
+  &,
+  .title {
+    transition: 0.2s;
+  }
+
+  @media (pointer: fine) {
+    &:hover {
+      transform: scale(1.3);
+
+      .title {
+        color: $secondColor;
+      }
+    }
+  }
 
   .title {
     margin-top: 1rem;

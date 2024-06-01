@@ -9,7 +9,7 @@ interface ISkillItemProps {
 
 const SkillItem = (props: ISkillItemProps) => (
   <li className={style.skillItem}>
-    <Image src={props.logo} alt="tech logo" width={90} height={90} />
+    <Image src={props.logo} alt="tech logo" width={70} height={70} />
     <span className={style.title}>{props.title}</span>
   </li>
 );

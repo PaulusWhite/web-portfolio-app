@@ -25,7 +25,7 @@ const Skills = () => {
         })}
       </ul>
 
-      <h3>Tools, methodologies, approaches and systems I work with</h3>
+      <h3>Tools, methodologies, approaches and systems I use</h3>
 
       <ul className={style.other}>
         {other.map(async (otherItem: ISkillItem) => {
