@@ -10,6 +10,7 @@ interface ISectionProps extends IHeadingProps {
 const Section = (props: ISectionProps) => (
   <section className={style.section} id={props.id}>
     <Heading index={props.index} label={props.label} />
+    <span className={style["background-label"]}>{props.label}</span>
     <>{props.content}</>
   </section>
 );

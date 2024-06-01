@@ -2,6 +2,21 @@
 
 .section {
   @include flexColumn;
+  position: relative;
   justify-content: center;
   min-height: 100vh;
+
+  .background-label {
+    position: absolute;
+    bottom: 10rem;
+    left: -16rem;
+    z-index: -1;
+    color: $mainColor;
+    font-size: 13rem;
+    text-wrap: nowrap;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    opacity: 0.05;
+    pointer-events: none;
+  }
 }
