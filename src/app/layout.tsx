@@ -25,15 +25,15 @@ export default function RootLayout({
 }>) {
   const flashlightRef = useRef(null);
   useEffect(() => {
-    const flashlightNode: unknown = flashlightRef.current;
-    flashlightEffect(flashlightNode as HTMLDivElement);
+    // const flashlightNode: unknown = flashlightRef.current;
+    // flashlightEffect(flashlightNode as HTMLDivElement);
   }, []);
   return (
     <html lang="en">
       <body className={inter.className}>
         <Header />
         {children}
-        <Flashlight node={flashlightRef} />
+        {/* <Flashlight node={flashlightRef} /> */}
       </body>
     </html>
   );
