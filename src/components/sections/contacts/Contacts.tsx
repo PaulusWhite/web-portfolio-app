@@ -13,27 +13,24 @@ const Contacts = () => (
       <form>
         <h3>Write me a letter</h3>
 
-        <input type="text" />
-        <input type="email" />
+        <input type="text" placeholder="You Name" />
+        <input type="email" placeholder="You Email" />
 
-        <textarea rows={10} />
+        <textarea rows={10} placeholder="Your Message" />
 
         <button type="submit">Get in touch</button>
       </form>
 
       <div className={style.text}>
         <p>
-          Do you have any questions about me or any kind of propositions? Please get in touch with
+          Do you have any questions about me or any kind of propositions? Please, get in touch with
           me!
         </p>
         <p>
-          Also if you have some remarks or you've found some mistakes in my work so then I always
-          welcome constructive criticism.
+          Also if you have some remarks or you've found some mistakes in my work, I always welcome
+          constructive criticism.
         </p>
         <p>Have you already sent a message to me? I will answer in the shortest time.</p>
-        <p>
-          My inbox: <a href="mailto:exactlypaulus@gmail.com">exactlypaulus@gmail.com</a>
-        </p>
       </div>
     </div>
 
@@ -42,7 +39,9 @@ const Contacts = () => (
         <ContactItem logo={inIcon.src} link="https://www.linkedin.com/in/exactlypaul/" />
         <ContactItem logo={githubIcon.src} link="https://github.com/PaulusWhite" />
       </ul>
-      <button className={style["top-btn"]}>Back to top</button>
+      <p className={style.inbox}>
+        My inbox: <a href="mailto:exactlypaulus@gmail.com">exactlypaulus@gmail.com</a>
+      </p>
     </footer>
   </div>
 );

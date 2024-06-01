@@ -1,13 +1,85 @@
 @import "./../../common.scss";
 
+@mixin neonEffect {
+  border: solid $secondColor 0.2rem;
+  box-shadow: 0 0 1rem 0.1rem $secondColor;
+}
+
+@mixin borderStyle {
+  border: solid rgba($darkColor, 0) 0.2rem;
+  padding: 0.5rem;
+  transition: 0.2s;
+}
+
 .contacts {
   @include flexColumn;
 
   .form-field {
     display: flex;
+    gap: 5rem;
+    padding: 1rem;
 
     form {
       @include flexColumn;
+      gap: 1rem;
+      width: 100%;
+      max-width: 35rem;
+
+      h3 {
+        margin-top: unset;
+        font-size: 1.3rem;
+      }
+
+      input,
+      textarea {
+        @include borderStyle;
+        width: 100%;
+        padding: 0.5rem;
+
+        @media (pointer: fine) {
+          &:focus {
+            @include neonEffect;
+          }
+        }
+
+        &::placeholder {
+          font-size: 1.1rem;
+        }
+      }
+
+      input {
+        font-size: 1.1rem;
+      }
+
+      textarea {
+        font-size: 0.9rem;
+        resize: none;
+      }
+
+      button {
+        @include borderStyle;
+        margin-top: 1rem;
+        border-radius: 0.2rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        background-color: $secondColor;
+        cursor: pointer;
+
+        @media (pointer: fine) {
+          &:hover {
+            @include neonEffect;
+            color: $mainColor;
+          }
+        }
+      }
+    }
+
+    .text {
+      @include flexColumn;
+      max-width: 65rem;
+      margin-top: 2.5rem;
+      font-size: 1.3rem;
     }
   }
 
@@ -16,6 +88,12 @@
 
     .contacts-list {
       display: flex;
+      gap: 4rem;
+    }
+
+    .inbox {
+      margin-bottom: unset;
+      font-size: 1.5rem;
     }
   }
 }

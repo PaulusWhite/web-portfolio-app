@@ -8,9 +8,9 @@ interface IContactItemProps {
 }
 
 const ContactItem = (props: IContactItemProps) => (
-  <li>
+  <li className={style["contact-item"]}>
     <a href={props.link} className={style["contact-item"]}>
-      <Image src={props.logo} width={40} height={40} alt="contact-icon" />
+      <Image src={props.logo} width={50} height={50} alt="contact-icon" />
     </a>
   </li>
 );
