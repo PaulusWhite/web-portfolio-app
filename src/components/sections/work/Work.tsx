@@ -1,3 +1,6 @@
+//data
+import data from "./../../../lib/data.json";
+
 import style from "./../../../styles/modules/work/work.module.scss";
 
 //Icons
@@ -9,19 +12,35 @@ import devIcon from "./../../../../public/dev.svg";
 import SignItem from "./SignItem";
 import ProjectItem from "./ProjectItem";
 
-const Work = () => (
-  <div className={style.work}>
-    <ul className={style["signs-list"]}>
-      <SignItem label="Mobile-Friendly" icon={mobileIcon.src} />
-      <SignItem label="Modern" icon={modernIcon.src} />
-      <SignItem label="Built with love" icon={devIcon.src} />
-    </ul>
+//interfaces
+import { IProjectItemData } from "@/interfaces/IData";
 
-    <h3 className={style.heading}>Applications I've built</h3>
-    <ul className={style.projects}>
-      <ProjectItem data={null} />
-    </ul>
-  </div>
-);
+const Work = () => {
+  const { projects }: { projects: IProjectItemData[] } = data;
+
+  return (
+    <div className={style.work}>
+      <h3 className={style.heading}>Applications I've built</h3>
+
+      <ul className={style["signs-list"]}>
+        <SignItem label="Mobile-Friendly" icon={mobileIcon.src} />
+        <SignItem label="Modern" icon={modernIcon.src} />
+        <SignItem label="Built with love" icon={devIcon.src} />
+      </ul>
+
+      <ul className={style.projects}>
+        {projects.map(async (projectItemData: IProjectItemData) => {
+          const img: typeof import("*.jpg") = await import(
+            `./../../../../public/projects/${projectItemData.img}`
+          );
+
+          return <ProjectItem key={projectItemData.id} data={projectItemData} img={img} />;
+        })}
+
+        <ProjectItem data={null} />
+      </ul>
+    </div>
+  );
+};
 
 export default Work;

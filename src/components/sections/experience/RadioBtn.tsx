@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import style from "./../../../styles/modules/experience/radioBtn.module.scss";
 
 //interfaces

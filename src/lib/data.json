@@ -240,5 +240,19 @@
         "logo": "linux.svg"
       }
     ]
-  }
+  },
+  "projects": [
+    {
+      "id": 0,
+      "title": "Personal web site",
+      "img": "website.jpg",
+      "desc": {
+        "brief": "My personal web site",
+        "common": "This is my personal web site where you can get acquainted with me. Here you will find my CV, resume, contacts, some information about my experience skills. Also don't forget to check out some of my application I've built",
+        "technical": ["NextJS", "SASS", "CSS Modules"]
+      },
+      "github": "https://github.com/PaulusWhite/web-portfolio-app",
+      "deploy": ""
+    }
+  ]
 }

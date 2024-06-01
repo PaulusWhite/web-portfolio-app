@@ -1,7 +1,84 @@
 @import "./../../common.scss";
 
-.project-item {
+@mixin itemLayout {
   @include flexColumn;
+  position: relative;
+  align-items: center;
+  border: solid $secondColor 1.5px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.project-item {
+  @include itemLayout;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  @media (pointer: fine) {
+    &:hover {
+      .pop-up {
+        top: 0;
+      }
+    }
+  }
+
+  .pop-up {
+    align-self: stretch;
+    @include flexColumn;
+    align-items: flex-start;
+    position: relative;
+    top: 100%;
+    gap: 1rem;
+    margin-top: auto;
+    padding: 2rem;
+    background-color: rgba($darkColor, 0.6);
+    transition: 0.4s;
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .desc {
+      font-size: 1.1rem;
+    }
+
+    .tech-list {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+
+      .tech {
+        padding: 0.4rem;
+        background-color: $secondColor;
+        border-radius: 0.3rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.comming-project {
+  @include itemLayout;
+  justify-content: center;
+
+  .veil {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba($mainColor, 0.1);
+    backdrop-filter: blur(0.3rem);
+  }
+
+  .notice {
+    position: relative;
+    z-index: 3;
+    font-size: 2rem;
+  }
 }

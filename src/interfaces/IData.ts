@@ -17,4 +17,17 @@ interface ISkillItem {
   logo: string;
 }
 
-export type { IDataRadioValue, IDataRadioItem, IDataDescItem, ISkillItem };
+interface IProjectItemData {
+  id: number;
+  title: string;
+  img: string;
+  desc: {
+    brief: string;
+    common: string;
+    technical: string[];
+  };
+  github: string;
+  deploy: string;
+}
+
+export type { IDataRadioValue, IDataRadioItem, IDataDescItem, ISkillItem, IProjectItemData };

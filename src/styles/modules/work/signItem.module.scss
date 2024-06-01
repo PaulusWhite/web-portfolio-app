@@ -3,4 +3,5 @@
 .signItem {
   @include flexColumn;
   align-items: center;
+  gap: 1rem;
 }
