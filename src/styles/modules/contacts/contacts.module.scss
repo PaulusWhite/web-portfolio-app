@@ -1,16 +1,5 @@
 @import "./../../common.scss";
 
-@mixin neonEffect {
-  border: solid $secondColor 0.2rem;
-  box-shadow: 0 0 1rem 0.1rem $secondColor;
-}
-
-@mixin borderStyle {
-  border: solid rgba($darkColor, 0) 0.2rem;
-  padding: 0.5rem;
-  transition: 0.2s;
-}
-
 .contacts {
   @include flexColumn;
 
@@ -56,24 +45,6 @@
       textarea {
         font-size: 0.9rem;
         resize: none;
-      }
-
-      button {
-        @include borderStyle;
-        margin-top: 1rem;
-        border-radius: 0.2rem;
-        font-size: 1.4rem;
-        font-weight: bold;
-        letter-spacing: 2px;
-        background-color: $secondColor;
-        cursor: pointer;
-
-        @media (pointer: fine) {
-          &:hover {
-            @include neonEffect;
-            color: $mainColor;
-          }
-        }
       }
     }
 

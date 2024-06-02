@@ -11,6 +11,7 @@ import inIcon from "./../../../../public/contacts/in.svg";
 
 //components
 import ContactItem from "./ContactItem";
+import Button from "@/components/common/Button";
 
 //scripts
 import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
@@ -41,7 +42,7 @@ const Contacts = () => {
 
           <textarea rows={10} placeholder="Your Message" />
 
-          <button type="submit">Get in touch</button>
+          <Button label="Get in touch" />
         </form>
 
         <div className={style.text} ref={textRef}>

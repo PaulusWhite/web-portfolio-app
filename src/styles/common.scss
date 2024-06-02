@@ -29,6 +29,17 @@ $secondColor: #800020;
   }
 }
 
+@mixin neonEffect {
+  border: solid $secondColor 0.2rem;
+  box-shadow: 0 0 1rem 0.1rem $secondColor;
+}
+
+@mixin borderStyle {
+  border: solid rgba($darkColor, 0) 0.2rem;
+  padding: 0.5rem;
+  transition: 0.2s;
+}
+
 //css mods for animations (using JS)
 
 //ascent effect

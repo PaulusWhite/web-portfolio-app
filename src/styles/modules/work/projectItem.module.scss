@@ -47,20 +47,6 @@
     .desc {
       font-size: 1.1rem;
     }
-
-    .tech-list {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-
-      .tech {
-        padding: 0.4rem;
-        background-color: $secondColor;
-        border-radius: 0.3rem;
-        font-size: 0.8rem;
-      }
-    }
   }
 }
 

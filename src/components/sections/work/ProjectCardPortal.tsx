@@ -4,6 +4,8 @@ import style from "./../../../styles/modules/work/projectCard.module.scss";
 
 //components
 import SourceLink from "./SourceLink";
+import Button from "@/components/common/Button";
+import TechList from "./TechList";
 
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
@@ -13,7 +15,7 @@ const ProjectCardPortal = (props: IProjectItemData) => {
 
   return (
     <aside className={style["project-card-portal"]}>
-      <button className={style["close-btn"]}>Close</button>
+      <Button label="Close" extraClass={style["close-btn"]} />
 
       <h3>{title}</h3>
 
@@ -26,13 +28,7 @@ const ProjectCardPortal = (props: IProjectItemData) => {
 
       <h3>Technologies</h3>
 
-      <ul className={style["tech-list"]}>
-        {desc.technical.map((tech: string, index: number) => (
-          <span key={index + tech} className={style["tech"]}>
-            {tech}
-          </span>
-        ))}
-      </ul>
+      <TechList techList={desc.technical} />
 
       <SourceLink link={deploy} type="Website" />
       <SourceLink link={github} type="Github" />

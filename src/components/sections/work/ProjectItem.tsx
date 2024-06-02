@@ -7,6 +7,9 @@ import style from "./../../../styles/modules/work/projectItem.module.scss";
 
 import codingImg from "./../../../../public/coding.jpg";
 
+//components
+import TechList from "./TechList";
+
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
 
@@ -48,15 +51,7 @@ const ProjectItem = (props: IProjectItemProps) => {
         <span className={style.title}>{title}</span>
         <span className={style.desc}>{desc.brief}</span>
 
-        <ul className={style["tech-list"]}>
-          {desc.technical.map((tech: string, index: number) => {
-            return (
-              <li key={index + tech} className={style.tech}>
-                {tech}
-              </li>
-            );
-          })}
-        </ul>
+        <TechList techList={desc.technical} />
       </div>
     </div>
   );

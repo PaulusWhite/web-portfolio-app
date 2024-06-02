@@ -1,0 +1,19 @@
+@import "./../../common.scss";
+
+.button {
+  @include borderStyle;
+  margin-top: 1rem;
+  border-radius: 0.2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: $secondColor;
+  cursor: pointer;
+
+  @media (pointer: fine) {
+    &:hover {
+      @include neonEffect;
+      color: $mainColor;
+    }
+  }
+}
