@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 import style from "./../../../styles/modules/experience/description.module.scss";
 
 //components
@@ -5,6 +7,9 @@ import BulletPoint from "./BulltetPoint";
 
 //interfaces
 import { IDataDescItem } from "@/interfaces/IData";
+
+//scripts
+// import setFallEffect from "@/scripts/startAnimations/setFallEffect";
 
 interface IDescriptionListProps {
   process: string;
@@ -17,8 +22,15 @@ interface IDescriptionListProps {
 const DescriptionList = (props: IDescriptionListProps) => {
   const { process, title, duration, list, link } = props;
 
+  const listRef = useRef(null);
+
+  useEffect(() => {
+    // const listNode: HTMLElement = listRef.current!;
+    // setFallEffect(listNode)
+  }, []);
+
   return (
-    <div className={style.description}>
+    <div className={style.description} ref={listRef}>
       <h3>
         {process}{" "}
         {process ? (

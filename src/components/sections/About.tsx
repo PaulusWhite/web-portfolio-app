@@ -10,14 +10,18 @@ import photo from "./../../../public/photo.jpg";
 
 //Scripts
 import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
+import setFallEffect from "@/scripts/startAnimations/setFallEffect";
 
 const About = () => {
   const speechRef = useRef(null);
+  const photoFrameRef = useRef(null);
 
   useEffect(() => {
     const speechBlock: HTMLDivElement = speechRef.current!;
+    const photoFrameNode: HTMLElement = photoFrameRef.current!;
 
     setAscentEffect(Array.from(speechBlock.children));
+    setFallEffect(photoFrameNode);
   }, []);
 
   return (
@@ -36,7 +40,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className={style["photo-frame"]}>
+      <div className={style["photo-frame"]} ref={photoFrameRef}>
         <Image
           src={photo.src}
           alt="my-photo"

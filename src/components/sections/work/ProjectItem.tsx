@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 import style from "./../../../styles/modules/work/projectItem.module.scss";
 
@@ -6,6 +9,9 @@ import codingImg from "./../../../../public/coding.jpg";
 
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
+
+//scripts
+import setFallEffect from "@/scripts/startAnimations/setFallEffect";
 
 interface IProjectItemProps {
   data: IProjectItemData | null;
@@ -15,9 +21,17 @@ interface IProjectItemProps {
 const ProjectItem = (props: IProjectItemProps) => {
   const isData: boolean = Boolean(props.data);
 
+  const emptyItemRef = useRef(null);
+  const itemRef = useRef(null);
+
+  useEffect(() => {
+    const itemNode: HTMLElement = isData ? itemRef.current! : emptyItemRef.current!;
+    setFallEffect(itemNode);
+  });
+
   if (!isData) {
     return (
-      <div className={style["comming-project"]}>
+      <div className={style["comming-project"]} ref={emptyItemRef}>
         <Image src={codingImg.src} fill={true} alt="coding" sizes="100%" />
         <div className={style.veil}></div>
         <p className={style.notice}>Comming soon</p>
@@ -29,7 +43,7 @@ const ProjectItem = (props: IProjectItemProps) => {
   const img = props.img as typeof import("*.jpg");
 
   return (
-    <div className={style["project-item"]}>
+    <div className={style["project-item"]} ref={itemRef}>
       <Image src={img} fill={true} sizes="100%" alt="app-preview" />
 
       <div className={style["pop-up"]}>
