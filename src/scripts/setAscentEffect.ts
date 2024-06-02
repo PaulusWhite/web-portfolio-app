@@ -1,27 +1,19 @@
 const setAscentEffect = (elementsArr: Element[]) => {
   elementsArr.forEach((element: Element) => {
-    element.classList.add("ascentInit"); // is not a module css
+    element.classList.add("ascentInit");
 
-    const ascentEffectAction = () => {
-      const elementPosition: number = element.getBoundingClientRect().y;
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      const [entry] = entries;
 
-      if (elementPosition > 0 && window.innerHeight > elementPosition) {
-        setTimeout(() => {
-          element.classList.add("showNode");
-
-          setTimeout(() => {
-            element.classList.remove("ascentInit");
-            element.classList.remove("showNode");
-          }, 1000);
-        }, 500);
-
-        window.removeEventListener("scroll", ascentEffectAction);
+      if (entry.isIntersecting) {
+        entry.target.classList.add("showNode");
+        observer.unobserve(element);
       }
     };
 
-    window.addEventListener("scroll", ascentEffectAction);
+    const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
 
-    ascentEffectAction(); //init
+    observer.observe(element);
   });
 };
 
