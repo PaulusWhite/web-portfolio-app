@@ -15,6 +15,7 @@ import devIcon from "./../../../../public/dev.svg";
 //components
 import SignItem from "./SignItem";
 import ProjectItem from "./ProjectItem";
+import ProjectCardPortal from "./ProjectCardPortal";
 
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
@@ -47,16 +48,13 @@ const Work = () => {
       </ul>
 
       <ul className={style.projects}>
-        {projects.map(async (projectItemData: IProjectItemData) => {
-          const img: typeof import("*.jpg") = await import(
-            `./../../../../public/projects/${projectItemData.img}`
-          );
-
-          return <ProjectItem key={projectItemData.id} data={projectItemData} img={img} />;
+        {projects.map((projectItemData: IProjectItemData) => {
+          return <ProjectItem key={projectItemData.id} data={projectItemData} />;
         })}
 
         <ProjectItem data={null} />
       </ul>
+      <ProjectCardPortal {...projects[0]} />
     </div>
   );
 };

@@ -1,0 +1,10 @@
+@import "./../../common.scss";
+
+.source-link {
+  @include flexColumn;
+
+  .label {
+    display: flex;
+    align-items: center;
+  }
+}

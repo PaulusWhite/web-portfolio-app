@@ -15,7 +15,6 @@ import setFallEffect from "@/scripts/startAnimations/setFallEffect";
 
 interface IProjectItemProps {
   data: IProjectItemData | null;
-  img?: typeof import("*.jpg");
 }
 
 const ProjectItem = (props: IProjectItemProps) => {
@@ -39,12 +38,11 @@ const ProjectItem = (props: IProjectItemProps) => {
     );
   }
 
-  const { title, desc, github, deploy } = props.data as IProjectItemData;
-  const img = props.img as typeof import("*.jpg");
+  const { title, desc, github, deploy, img } = props.data as IProjectItemData;
 
   return (
     <div className={style["project-item"]} ref={itemRef}>
-      <Image src={img} fill={true} sizes="100%" alt="app-preview" />
+      <Image src={`/projects/${img}`} fill={true} sizes="100%" alt="app-preview" />
 
       <div className={style["pop-up"]}>
         <span className={style.title}>{title}</span>
