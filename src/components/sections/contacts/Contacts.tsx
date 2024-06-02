@@ -13,7 +13,7 @@ import inIcon from "./../../../../public/contacts/in.svg";
 import ContactItem from "./ContactItem";
 
 //scripts
-import setAscentEffect from "@/scripts/setAscentEffect";
+import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
 
 const Contacts = () => {
   const textRef = useRef(null);

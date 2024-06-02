@@ -7,7 +7,7 @@ import { IHeadingProps } from "./Heading";
 import Heading from "./Heading";
 
 //scripts
-import setBgLabelSlipEffect from "@/scripts/setBgLabelSlipEffect";
+import setBgLabelSlipEffect from "@/scripts/startAnimations/setBgLabelSlipEffect";
 
 interface ISectionProps extends IHeadingProps {
   content: React.ReactNode;

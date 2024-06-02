@@ -9,7 +9,7 @@ import Image from "next/image";
 import photo from "./../../../public/photo.jpg";
 
 //Scripts
-import setAscentEffect from "@/scripts/setAscentEffect";
+import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
 
 const About = () => {
   const speechRef = useRef(null);

@@ -13,7 +13,7 @@ import SkillItem from "./SkillItem";
 import { ISkillItem } from "@/interfaces/IData";
 
 //scripts
-import setAscentEffect from "@/scripts/setAscentEffect";
+import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
 
 const Skills = () => {
   const { techs, other }: { techs: ISkillItem[]; other: ISkillItem[] } = data.skills;
