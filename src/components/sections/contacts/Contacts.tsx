@@ -17,11 +17,13 @@ import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
 
 const Contacts = () => {
   const textRef = useRef(null);
+  const footerRef = useRef(null);
 
   useEffect(() => {
     const textBlock: HTMLDivElement = textRef.current!;
+    const footerNode: HTMLDivElement = footerRef.current!;
 
-    setAscentEffect(Array.from(textBlock.children));
+    setAscentEffect([...Array.from(textBlock.children), footerNode]);
   }, []);
 
   return (
@@ -51,7 +53,7 @@ const Contacts = () => {
         </div>
       </div>
 
-      <footer>
+      <footer ref={footerRef}>
         <ul className={style["contacts-list"]}>
           <ContactItem logo={inIcon.src} link="https://www.linkedin.com/in/exactlypaul/" />
           <ContactItem logo={githubIcon.src} link="https://github.com/PaulusWhite" />
