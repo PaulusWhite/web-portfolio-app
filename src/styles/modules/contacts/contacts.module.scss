@@ -24,6 +24,8 @@
       gap: 1rem;
       width: 100%;
       max-width: 35rem;
+      overflow: hidden;
+      transition: 1.5s ease-in-out;
 
       h3 {
         margin-top: unset;

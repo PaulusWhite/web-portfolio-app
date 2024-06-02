@@ -11,6 +11,8 @@
   display: flex;
   gap: 5rem;
   height: 35rem;
+  overflow: hidden;
+  transition: 1.5s ease-in-out;
 
   .radioList {
     @include flexColumn;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import style from "./../../../styles/modules/experience/experience.module.scss";
 
 //data
@@ -13,14 +13,23 @@ import { IDataRadioItem, IDataRadioValue } from "@/interfaces/IData";
 import DescriptionList from "./DescriptionList";
 import RadioBtn from "./RadioBtn";
 
+//scripts
+import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
+
 const Experience = () => {
   const radioList: IDataRadioItem[] = data.radioList as IDataRadioItem[];
   const defaultValue: IDataRadioValue = radioList[0].value;
+  const expRef = useRef(null);
 
   const [activeInput, setInput] = useState<IDataRadioValue>(defaultValue);
 
+  useEffect(() => {
+    const expNode: HTMLDivElement = expRef.current!;
+    setUnrollEffect(expNode);
+  }, []);
+
   return (
-    <div className={style.experience}>
+    <div className={style.experience} ref={expRef}>
       <div className={style.radioList}>
         {radioList.map((radioItem: IDataRadioItem) => {
           const isChecked: boolean = activeInput === radioItem.value;

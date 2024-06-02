@@ -14,22 +14,26 @@ import ContactItem from "./ContactItem";
 
 //scripts
 import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
+import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
 
 const Contacts = () => {
   const textRef = useRef(null);
   const footerRef = useRef(null);
+  const formRef = useRef(null);
 
   useEffect(() => {
     const textBlock: HTMLDivElement = textRef.current!;
     const footerNode: HTMLDivElement = footerRef.current!;
+    const formNode: HTMLFormElement = formRef.current!;
 
     setAscentEffect([...Array.from(textBlock.children), footerNode]);
+    setUnrollEffect(formNode);
   }, []);
 
   return (
     <div className={style.contacts}>
       <div className={style["form-field"]}>
-        <form>
+        <form ref={formRef}>
           <h3>Write me a letter</h3>
 
           <input type="text" placeholder="You Name" />
