@@ -27,3 +27,16 @@ $secondColor: #800020;
     }
   }
 }
+
+//css mods for animations (using JS)
+.ascentInit {
+  position: relative;
+  bottom: -4rem;
+  opacity: 0;
+  transition: 1s ease !important;
+}
+
+.showNode {
+  bottom: 0;
+  opacity: 1;
+}
