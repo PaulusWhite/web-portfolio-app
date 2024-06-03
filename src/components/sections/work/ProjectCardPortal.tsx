@@ -15,7 +15,9 @@ const ProjectCardPortal = (props: IProjectItemData) => {
 
   return (
     <aside className={style["project-card-portal"]}>
-      <Button label="Close" extraClass={style["close-btn"]} />
+      <Button extraClass={style["close-btn"]}>Close</Button>
+
+      <hr className={style.portition} />
 
       <h3>{title}</h3>
 
@@ -33,10 +35,10 @@ const ProjectCardPortal = (props: IProjectItemData) => {
       <SourceLink link={deploy} type="Website" />
       <SourceLink link={github} type="Github" />
 
-      <a href={deploy} className={style["deploy-link"]}>
+      <Button extraClass={style["deploy-link"]}>
         Open the project
-        <Image src="/open.svg" width={30} height={30} alt="link icon" />
-      </a>
+        <Image src="/open.svg" width={25} height={25} alt="link icon" />
+      </Button>
     </aside>
   );
 };

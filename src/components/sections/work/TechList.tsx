@@ -1,4 +1,4 @@
-import style from "./../../../styles/modules/work/tech.module.scss";
+import style from "./../../../styles/modules/work/techList.module.scss";
 
 const TechList = (props: { techList: string[] }) => (
   <ul className={style["tech-list"]}>

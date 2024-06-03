@@ -1,15 +1,17 @@
 import style from "./../../styles/modules/common/button.module.scss";
 
+import { ReactNode } from "react";
+
 interface IButtonProps {
-  label: string;
   extraClass?: string;
+  children: ReactNode;
 }
 
 const Button = (props: IButtonProps) => {
-  const { label, extraClass } = props;
+  const { extraClass } = props;
 
   return (
-    <button className={`${style.button} ${extraClass ? extraClass : ""}`}>{props.label}</button>
+    <button className={`${style.button} ${extraClass ? extraClass : ""}`}>{props.children}</button>
   );
 };
 

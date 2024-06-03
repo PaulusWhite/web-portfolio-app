@@ -42,7 +42,7 @@ const Contacts = () => {
 
           <textarea rows={10} placeholder="Your Message" />
 
-          <Button label="Get in touch" />
+          <Button>Get in touch</Button>
         </form>
 
         <div className={style.text} ref={textRef}>
