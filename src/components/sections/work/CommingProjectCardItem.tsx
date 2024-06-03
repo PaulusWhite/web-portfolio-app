@@ -1,6 +1,6 @@
 "use client";
 
-import style from "./../../../styles/modules/work/commingProjectItem.module.scss";
+import style from "./../../../styles/modules/work/commingProjectCardItem.module.scss";
 
 import { useRef, useEffect } from "react";
 
@@ -12,7 +12,7 @@ import codingImg from "./../../../../public/coding.jpg";
 //scripts
 import setFallEffect from "@/scripts/startAnimations/setFallEffect";
 
-const CommingProjectItem = () => {
+const CommingProjectCardItem = () => {
   const commingProjectRef = useRef(null);
 
   useEffect(() => {
@@ -29,4 +29,4 @@ const CommingProjectItem = () => {
   );
 };
 
-export default CommingProjectItem;
+export default CommingProjectCardItem;

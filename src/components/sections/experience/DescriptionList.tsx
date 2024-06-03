@@ -1,4 +1,4 @@
-import { useEffect, useRef, MutableRefObject } from "react";
+import { useEffect, MutableRefObject } from "react";
 import style from "./../../../styles/modules/experience/description.module.scss";
 
 //components
@@ -18,7 +18,6 @@ interface IDescriptionListProps {
 
 const DescriptionList = (props: IDescriptionListProps) => {
   const { descListRef, process, title, duration, list, link } = props;
-  // const listRef = useRef(null);
 
   useEffect(() => {
     const descListNode: HTMLDivElement = descListRef.current!;

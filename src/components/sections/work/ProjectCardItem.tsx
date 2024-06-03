@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import style from "./../../../styles/modules/work/projectCardPortal.module.scss";
+import style from "./../../../styles/modules/work/projectCardItem.module.scss";
 
 //components
 import SourceLink from "./SourceLink";
@@ -17,7 +17,7 @@ interface IProjectCardPortalProps {
   closePortal: () => void;
 }
 
-const ProjectCardPortal = (props: IProjectCardPortalProps) => {
+const ProjectCardItem = (props: IProjectCardPortalProps) => {
   const { title, img, desc, deploy, github } = props.data;
   const { closePortal } = props;
 
@@ -58,4 +58,4 @@ const ProjectCardPortal = (props: IProjectCardPortalProps) => {
   );
 };
 
-export default ProjectCardPortal;
+export default ProjectCardItem;

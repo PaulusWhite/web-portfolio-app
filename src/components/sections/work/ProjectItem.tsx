@@ -8,7 +8,7 @@ import style from "./../../../styles/modules/work/projectItem.module.scss";
 
 //components
 import TechList from "./TechList";
-import ProjectCardPortal from "./ProjectCardPortal";
+import ProjectCardItem from "./ProjectCardItem";
 
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
@@ -45,7 +45,7 @@ const ProjectItem = (props: IProjectItemProps) => {
       </div>
       {showProjectCard &&
         createPortal(
-          <ProjectCardPortal
+          <ProjectCardItem
             data={props.data as IProjectItemData}
             closePortal={() => setShowProjectCard(false)}
           />,
