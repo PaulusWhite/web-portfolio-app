@@ -14,6 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 //Components
 import Header from "@/components/Header";
 import Flashlight from "@/components/Flashlight";
+import BurgetMenu from "@/components/BurgerMenu";
 
 //scripts
 import flashlightEffect from "@/scripts/flashlightEffect";
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Header />
         {children}
         {/* <Flashlight node={flashlightRef} /> */}
+        <BurgetMenu />
       </body>
     </html>
   );
