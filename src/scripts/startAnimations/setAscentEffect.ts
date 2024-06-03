@@ -8,6 +8,11 @@ const setAscentEffect = (elementsArr: Element[]) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("showNode");
         observer.unobserve(element);
+
+        setTimeout(() => {
+          element.classList.remove("ascentInit");
+          entry.target.classList.remove("showNode");
+        }, 1100);
       }
     };
 

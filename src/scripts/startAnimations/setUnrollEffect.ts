@@ -9,6 +9,9 @@ const setUnrollEffect = (element: HTMLElement) => {
       const target: HTMLElement = entry.target as HTMLElement;
       target.style.height = originalHeight;
       observer.unobserve(element);
+      setTimeout(() => {
+        target.removeAttribute("style");
+      }, 2000);
     }
   };
 

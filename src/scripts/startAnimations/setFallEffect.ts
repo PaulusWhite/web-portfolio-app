@@ -7,6 +7,11 @@ const setFallEffect = (element: HTMLElement) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("showNode");
       observer.unobserve(element);
+
+      setTimeout(() => {
+        element.classList.remove("fallInit");
+        entry.target.classList.remove("showNode");
+      }, 1000);
     }
   };
 
