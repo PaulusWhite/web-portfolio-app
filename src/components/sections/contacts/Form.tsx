@@ -52,7 +52,7 @@ const Form = () => {
   const [state, dispatch] = useReducer(reducer, INIT_REDUCER_STATE);
   const { errorsMessage, nameValue, mailValue, messageValue } = state;
 
-  const submitForm = (e: FormEvent) => {
+  const submitForm = async (e: FormEvent) => {
     e.preventDefault();
 
     const errorsArr: string[] = [];
@@ -67,6 +67,26 @@ const Form = () => {
     if (errorsArr.length) {
       if (errorsMessage) dispatch({ type: "error", payload: "" });
       dispatch({ type: "error", payload: errorsArr.toString() });
+      return;
+    }
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: process.env.NEXT_PUBLIC_GMAIL_ACCESS_KEY,
+        name: nameValue,
+        email: mailValue,
+        message: messageValue,
+      }),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      console.log(result);
     }
   };
 
