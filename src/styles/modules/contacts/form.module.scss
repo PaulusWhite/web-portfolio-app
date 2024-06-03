@@ -1,0 +1,41 @@
+@import "./../../common.scss";
+
+.form {
+  @include flexColumn;
+  gap: 1rem;
+  width: 100%;
+  max-width: 35rem;
+  overflow: hidden;
+  transition: 1.5s ease-in-out;
+
+  h3 {
+    margin-top: unset;
+    font-size: 1.3rem;
+  }
+
+  input,
+  textarea {
+    @include borderStyle;
+    width: 100%;
+    padding: 0.5rem;
+
+    @media (pointer: fine) {
+      &:focus {
+        @include neonEffect;
+      }
+    }
+
+    &::placeholder {
+      font-size: 1.1rem;
+    }
+  }
+
+  input {
+    font-size: 1.1rem;
+  }
+
+  textarea {
+    font-size: 0.9rem;
+    resize: none;
+  }
+}
