@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { MutableRefObject, useEffect } from "react";
 
 import style from "./../../../styles/modules/work/projectCardItem.module.scss";
 
@@ -14,20 +15,39 @@ import { IProjectItemData } from "@/interfaces/IData";
 
 interface IProjectCardPortalProps {
   data: IProjectItemData;
+  itemCardRef: MutableRefObject<null>;
   closePortal: () => void;
 }
 
 const ProjectCardItem = (props: IProjectCardPortalProps) => {
-  const { title, img, desc, deploy, github } = props.data;
-  const { closePortal } = props;
+  const { title, img, desc, deploy, github, id } = props.data;
+  const { itemCardRef, closePortal } = props;
+
+  const closeProjectCardItem = () => {
+    const itemCardNode: HTMLElement = itemCardRef.current!;
+    itemCardNode.classList.remove(style.show);
+
+    setTimeout(() => {
+      closePortal();
+    }, 350);
+  };
+
+  useEffect(() => {
+    const itemCardNode: HTMLElement = itemCardRef.current!;
+
+    setTimeout(() => {
+      itemCardNode.classList.add(style.show);
+    }, 100);
+  }, [id]);
 
   return (
-    <div className={style.sheet} onClick={closePortal}>
+    <div className={style.sheet} onClick={closeProjectCardItem}>
       <aside
+        ref={itemCardRef}
         className={`${style["project-card-portal"]} openPortal`}
         onClick={(e) => e.stopPropagation()}
       >
-        <Button extraClass={style["close-btn"]} clickAction={closePortal}>
+        <Button extraClass={style["close-btn"]} clickAction={closeProjectCardItem}>
           Close
         </Button>
 

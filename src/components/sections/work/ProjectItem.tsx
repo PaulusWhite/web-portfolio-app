@@ -21,15 +21,17 @@ interface IProjectItemProps {
 }
 
 const ProjectItem = (props: IProjectItemProps) => {
+  const { title, desc, img } = props.data;
+
   const [showProjectCard, setShowProjectCard] = useState(false);
+
   const itemRef = useRef(null);
+  const itemCardRef = useRef(null);
 
   useEffect(() => {
     const itemNode: HTMLElement = itemRef.current!;
     setFallEffect(itemNode);
   }, []);
-
-  const { title, desc, img } = props.data;
 
   return (
     <>
@@ -46,6 +48,7 @@ const ProjectItem = (props: IProjectItemProps) => {
       {showProjectCard &&
         createPortal(
           <ProjectCardItem
+            itemCardRef={itemCardRef}
             data={props.data as IProjectItemData}
             closePortal={() => setShowProjectCard(false)}
           />,
