@@ -1,98 +1,84 @@
-import { useEffect, useRef, useReducer, FormEvent } from "react";
+import { useEffect, useRef, useReducer, FormEvent, useState } from "react";
 import { createPortal } from "react-dom";
 
 import style from "./../../../styles/modules/contacts/form.module.scss";
 
 //components
 import Button from "@/components/common/Button";
-import ErrorPopupPortal from "./ErrorPopupPortal";
+import PopupPortal from "./PopupPortal";
+
+//interfaces
+import { IValidationResult } from "@/scripts/formValidations";
+import { IPostRequestBody } from "@/interfaces/IPostMessageByEmail";
+import { IResponseData } from "@/interfaces/IPostMessageByEmail";
 
 //scripts
 import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
-import { isInputValueValid, isMailInputValid } from "@/scripts/formValidations";
+import { isFormDataValid } from "@/scripts/formValidations";
 
-const COMMON_ERROR_TEXT: string = "You did not enter your";
-
-interface IReducerState {
-  errorsMessage: string;
-  nameValue: string;
-  mailValue: string;
-  messageValue: string;
-}
-
-interface IAction {
-  type: "name" | "mail" | "message" | "error";
-  payload: string;
-}
+import formReducer from "@/lib/formReducer";
+import { IReducerState } from "@/lib/formReducer";
 
 const INIT_REDUCER_STATE: IReducerState = {
-  errorsMessage: "",
   nameValue: "",
   mailValue: "",
   messageValue: "",
 };
 
-const reducer = (state: IReducerState, action: IAction) => {
-  const { type } = action;
-  const payload = action.payload === " " ? "" : action.payload;
-
-  if (type === "name" && isInputValueValid(payload as string))
-    return { ...state, nameValue: payload };
-  if (type === "mail" && isInputValueValid(payload as string))
-    return { ...state, mailValue: payload };
-  if (type === "message") return { ...state, messageValue: payload };
-  if (type === "error") return { ...state, errorsMessage: payload };
-
-  return state;
-};
-
 const Form = () => {
   const formRef = useRef(null);
 
-  const [state, dispatch] = useReducer(reducer, INIT_REDUCER_STATE);
-  const { errorsMessage, nameValue, mailValue, messageValue } = state;
+  const [state, dispatch] = useReducer(formReducer, INIT_REDUCER_STATE);
+  const { nameValue, mailValue, messageValue } = state;
+
+  const [isPopupMessage, setPopupMessage] = useState<boolean>(false);
+  const [errorsArr, setErrors] = useState<false | string[]>(false);
+  const [successMessage, setSuccessMessage] = useState<false | string>(false);
 
   const submitForm = async (e: FormEvent) => {
     e.preventDefault();
 
-    const errorsArr: string[] = [];
+    const validationData: IValidationResult = isFormDataValid(state);
+    const { isValid, errors } = validationData;
 
-    if (!nameValue.length) errorsArr.push(`${COMMON_ERROR_TEXT} name`);
-    if (mailValue && !isMailInputValid(mailValue)) {
-      errorsArr.push("Email you entered is not correct");
-    }
-    if (!mailValue.length) errorsArr.push(`${COMMON_ERROR_TEXT} mail`);
-    if (!messageValue.length) errorsArr.push(`${COMMON_ERROR_TEXT} message`);
-
-    if (errorsArr.length) {
-      if (errorsMessage) dispatch({ type: "error", payload: "" });
-      dispatch({ type: "error", payload: errorsArr.toString() });
+    if (!isValid) {
+      setErrors(errors as string[]);
+      setPopupMessage(true);
       return;
     }
 
-    const response = await fetch("https://api.web3forms.com/submit", {
+    const requestBody: IPostRequestBody = {
+      name: nameValue,
+      email: mailValue,
+      message: messageValue,
+    };
+
+    const response: Response = await fetch("/api", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        access_key: process.env.NEXT_PUBLIC_GMAIL_ACCESS_KEY,
-        name: nameValue,
-        email: mailValue,
-        message: messageValue,
-      }),
+      body: JSON.stringify(requestBody),
     });
 
-    const result = await response.json();
-    if (result.success) {
-      console.log(result);
+    const data: IResponseData = await response.json();
+    const { isError, message } = data;
+
+    if (isError) {
+      setErrors([message]);
+    } else {
+      setSuccessMessage(message);
     }
+
+    setPopupMessage(true);
+  };
+
+  const closePopupPortal = () => {
+    setPopupMessage(false);
+    setErrors(false);
+    setSuccessMessage(false);
   };
 
   useEffect(() => {
     const formNode: HTMLFormElement = formRef.current!;
-    // setUnrollEffect(formNode);
+    setUnrollEffect(formNode);
   }, []);
 
   return (
@@ -123,12 +109,10 @@ const Form = () => {
 
         <Button>Get in touch</Button>
       </form>
-      {errorsMessage &&
+
+      {isPopupMessage &&
         createPortal(
-          <ErrorPopupPortal
-            errorMessage={errorsMessage}
-            closePortal={() => dispatch({ type: "error", payload: "" })}
-          />,
+          <PopupPortal {...{ errorsArr, successMessage, closePopupPortal }} />,
           document.body,
         )}
     </>
