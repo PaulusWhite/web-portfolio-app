@@ -1,5 +1,4 @@
-// import { useEffect, useRef } from "react";
-
+import { useEffect, useRef, MutableRefObject } from "react";
 import style from "./../../../styles/modules/experience/description.module.scss";
 
 //components
@@ -8,10 +7,8 @@ import BulletPoint from "./BulltetPoint";
 //interfaces
 import { IDataDescItem } from "@/interfaces/IData";
 
-//scripts
-// import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
-
 interface IDescriptionListProps {
+  descListRef: MutableRefObject<null>;
   process: string;
   title: string;
   duration: string;
@@ -20,17 +17,16 @@ interface IDescriptionListProps {
 }
 
 const DescriptionList = (props: IDescriptionListProps) => {
-  const { process, title, duration, list, link } = props;
-
+  const { descListRef, process, title, duration, list, link } = props;
   // const listRef = useRef(null);
 
-  // useEffect(() => {
-  //   const listNode: HTMLElement = listRef.current!;
-  //   setUnrollEffect(listNode);
-  // }, []);
+  useEffect(() => {
+    const descListNode: HTMLDivElement = descListRef.current!;
+    descListNode.classList.add(style.show);
+  }, [props]);
 
   return (
-    <div className={style["description-list"]}>
+    <div className={style["description-list"]} ref={descListRef}>
       <h3>
         {process}{" "}
         {process ? (

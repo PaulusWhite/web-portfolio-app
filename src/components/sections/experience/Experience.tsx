@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import style from "./../../../styles/modules/experience/experience.module.scss";
+import descListStyle from "./../../../styles/modules/experience/description.module.scss";
 
 //data
 import data from "./../../../lib/data.json";
@@ -20,8 +21,18 @@ const Experience = () => {
   const radioList: IDataRadioItem[] = data.radioList as IDataRadioItem[];
   const defaultValue: IDataRadioValue = radioList[0].value;
   const expRef = useRef(null);
+  const descListRef = useRef(null);
 
   const [activeInput, setInput] = useState<IDataRadioValue>(defaultValue);
+
+  const changeInput = (value: IDataRadioValue) => {
+    const descListNode: HTMLDivElement = descListRef.current!;
+    descListNode.classList.remove(descListStyle.show);
+
+    setTimeout(() => {
+      setInput(value);
+    }, 350);
+  };
 
   useEffect(() => {
     const expNode: HTMLDivElement = expRef.current!;
@@ -40,12 +51,12 @@ const Experience = () => {
               label={radioItem.label}
               value={radioItem.value}
               isChecked={isChecked}
-              setInput={setInput}
+              setInput={changeInput}
             />
           );
         })}
       </div>
-      <DescriptionList {...data.descriptionList[activeInput]} />
+      <DescriptionList {...data.descriptionList[activeInput]} descListRef={descListRef} />
     </div>
   );
 };

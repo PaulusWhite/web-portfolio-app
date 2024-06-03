@@ -4,6 +4,8 @@
   @include flexColumn;
   width: 100%;
   max-width: 40rem;
+  opacity: 0;
+  transition: 0.3s;
 
   h3 {
     width: 100%;
@@ -27,4 +29,9 @@
   .list {
     margin-top: 2rem;
   }
+}
+
+//css mod for smooth appearance
+.show {
+  opacity: 1;
 }
