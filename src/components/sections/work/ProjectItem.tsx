@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import style from "./../../../styles/modules/work/projectItem.module.scss";
 
-import codingImg from "./../../../../public/coding.jpg";
-
 //components
 import TechList from "./TechList";
+import ProjectCardPortal from "./ProjectCardPortal";
 
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
@@ -17,43 +17,41 @@ import { IProjectItemData } from "@/interfaces/IData";
 import setFallEffect from "@/scripts/startAnimations/setFallEffect";
 
 interface IProjectItemProps {
-  data: IProjectItemData | null;
+  data: IProjectItemData;
 }
 
 const ProjectItem = (props: IProjectItemProps) => {
-  const isData: boolean = Boolean(props.data);
-
-  const emptyItemRef = useRef(null);
+  const [showProjectCard, setShowProjectCard] = useState(false);
   const itemRef = useRef(null);
 
   useEffect(() => {
-    const itemNode: HTMLElement = isData ? itemRef.current! : emptyItemRef.current!;
+    const itemNode: HTMLElement = itemRef.current!;
     setFallEffect(itemNode);
-  });
+  }, []);
 
-  if (!isData) {
-    return (
-      <div className={style["comming-project"]} ref={emptyItemRef}>
-        <Image src={codingImg.src} fill={true} alt="coding" sizes="100%" />
-        <div className={style.veil}></div>
-        <p className={style.notice}>Comming soon</p>
-      </div>
-    );
-  }
-
-  const { title, desc, github, deploy, img } = props.data as IProjectItemData;
+  const { title, desc, img } = props.data;
 
   return (
-    <div className={style["project-item"]} ref={itemRef}>
-      <Image src={`/projects/${img}`} fill={true} sizes="100%" alt="app-preview" />
+    <>
+      <div className={style["project-item"]} ref={itemRef} onClick={() => setShowProjectCard(true)}>
+        <Image src={`/projects/${img}`} fill={true} sizes="100%" alt="app-preview" />
 
-      <div className={style["pop-up"]}>
-        <span className={style.title}>{title}</span>
-        <span className={style.desc}>{desc.brief}</span>
+        <div className={style["pop-up"]}>
+          <span className={style.title}>{title}</span>
+          <span className={style.desc}>{desc.brief}</span>
 
-        <TechList techList={desc.technical} />
+          <TechList techList={desc.technical} />
+        </div>
       </div>
-    </div>
+      {showProjectCard &&
+        createPortal(
+          <ProjectCardPortal
+            data={props.data as IProjectItemData}
+            closePortal={() => setShowProjectCard(false)}
+          />,
+          document.body,
+        )}
+    </>
   );
 };
 

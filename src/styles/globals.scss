@@ -22,6 +22,10 @@ body {
     color: $mainColor;
     background-color: $secondColor;
   }
+
+  &:has(.openPortal) {
+    overflow: hidden;
+  }
 }
 
 * {

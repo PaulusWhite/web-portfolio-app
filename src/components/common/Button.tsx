@@ -5,13 +5,19 @@ import { ReactNode } from "react";
 interface IButtonProps {
   extraClass?: string;
   children: ReactNode;
+  clickAction?: () => void;
 }
 
 const Button = (props: IButtonProps) => {
-  const { extraClass } = props;
+  const { extraClass, clickAction } = props;
 
   return (
-    <button className={`${style.button} ${extraClass ? extraClass : ""}`}>{props.children}</button>
+    <button
+      className={`${style.button} ${extraClass ? extraClass : ""}`}
+      onClick={() => clickAction && clickAction()}
+    >
+      {props.children}
+    </button>
   );
 };
 

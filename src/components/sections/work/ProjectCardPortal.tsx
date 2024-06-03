@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import style from "./../../../styles/modules/work/projectCardPortal.module.scss";
@@ -10,13 +12,24 @@ import TechList from "./TechList";
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
 
-const ProjectCardPortal = (props: IProjectItemData) => {
-  const { title, img, desc, deploy, github } = props;
+interface IProjectCardPortalProps {
+  data: IProjectItemData;
+  closePortal: () => void;
+}
+
+const ProjectCardPortal = (props: IProjectCardPortalProps) => {
+  const { title, img, desc, deploy, github } = props.data;
+  const { closePortal } = props;
 
   return (
-    <div className={style.sheet}>
-      <aside className={style["project-card-portal"]}>
-        <Button extraClass={style["close-btn"]}>Close</Button>
+    <div className={style.sheet} onClick={closePortal}>
+      <aside
+        className={`${style["project-card-portal"]} openPortal`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Button extraClass={style["close-btn"]} clickAction={closePortal}>
+          Close
+        </Button>
 
         <hr className={style.portition} />
 

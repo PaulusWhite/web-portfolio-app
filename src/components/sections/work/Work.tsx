@@ -15,7 +15,7 @@ import devIcon from "./../../../../public/dev.svg";
 //components
 import SignItem from "./SignItem";
 import ProjectItem from "./ProjectItem";
-import ProjectCardPortal from "./ProjectCardPortal";
+import CommingProjectItem from "./CommingProjectItem";
 
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
@@ -52,9 +52,8 @@ const Work = () => {
           return <ProjectItem key={projectItemData.id} data={projectItemData} />;
         })}
 
-        <ProjectItem data={null} />
+        <CommingProjectItem />
       </ul>
-      <ProjectCardPortal {...projects[0]} />
     </div>
   );
 };
