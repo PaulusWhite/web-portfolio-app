@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import style from "./../../../styles/modules/contacts/popupPortal.module.scss";
 
@@ -14,16 +14,44 @@ const PopupPortal = (props: IPopupPortalProps) => {
   const { errorsArr, successMessage, closePopupPortal } = props;
   const extraClass = errorsArr ? "error" : "success";
 
-  useEffect(() => {
-    const timerID = setTimeout(() => {
-      closePopupPortal();
-    }, 5000);
+  const popupRef = useRef(null);
 
-    return () => clearTimeout(timerID);
+  const forceClosePopup = () => {
+    const popupNode: HTMLDivElement = popupRef.current!;
+    popupNode.classList.remove(style.show);
+
+    setTimeout(() => {
+      closePopupPortal();
+    }, 300);
+  };
+
+  useEffect(() => {
+    const popupNode: HTMLDivElement = popupRef.current!;
+
+    const appearanceID = setTimeout(() => {
+      popupNode.classList.add(style.show);
+    }, 100);
+
+    const timerID = setTimeout(() => {
+      popupNode.classList.remove(style.show);
+
+      setTimeout(() => {
+        closePopupPortal();
+      }, 350);
+    }, 5100);
+
+    return () => {
+      clearTimeout(appearanceID);
+      clearTimeout(timerID);
+    };
   }, []);
 
   return (
-    <div className={`${style["popupPortal"]} ${style[extraClass]}`} onClick={closePopupPortal}>
+    <div
+      className={`${style["popupPortal"]} ${style[extraClass]}`}
+      ref={popupRef}
+      onClick={forceClosePopup}
+    >
       {errorsArr &&
         errorsArr.map((errorMessage: string, index: number) => {
           return <span key={index + errorMessage[1]}>{errorMessage}</span>;
