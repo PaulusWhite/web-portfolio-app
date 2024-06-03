@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense, useState } from "react";
 // import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.scss";
@@ -15,6 +15,7 @@ const inter = Inter({ subsets: ["latin"] });
 import Header from "@/components/Header";
 import Flashlight from "@/components/Flashlight";
 import BurgetMenu from "@/components/BurgerMenu";
+import Loader from "@/components/Loader";
 
 //scripts
 import flashlightEffect from "@/scripts/flashlightEffect";
@@ -24,18 +25,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const flashlightRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
+  // const flashlightRef = useRef(null);
   useEffect(() => {
+    console.log("READY");
+    setIsLoading(false);
     // const flashlightNode: unknown = flashlightRef.current;
     // flashlightEffect(flashlightNode as HTMLDivElement);
   }, []);
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        {/* <Flashlight node={flashlightRef} /> */}
-        <BurgetMenu />
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            <Header />
+            {children}
+            {/* <Flashlight node={flashlightRef} /> */}
+            <BurgetMenu />
+          </>
+        )}
       </body>
     </html>
   );
