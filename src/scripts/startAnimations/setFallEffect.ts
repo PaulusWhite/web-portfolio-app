@@ -11,7 +11,7 @@ const setFallEffect = (element: HTMLElement) => {
       setTimeout(() => {
         element.classList.remove("fallInit");
         entry.target.classList.remove("showNode");
-      }, 1000);
+      }, 2000);
     }
   };
 
