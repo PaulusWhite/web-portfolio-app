@@ -1,3 +1,8 @@
+"use client";
+import { useContext, useEffect } from "react";
+import { LoaderContext } from "./ContextProvider";
+import { ILoaderContext } from "@/interfaces/IContext";
+
 //Components
 import Section from "@/components/common/Section";
 import About from "@/components/sections/About";
@@ -7,6 +12,11 @@ import Work from "@/components/sections/work/Work";
 import Contacts from "@/components/sections/contacts/Contacts";
 
 const Main = () => {
+  const { setIsLoading } = useContext(LoaderContext) as ILoaderContext;
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
     <main>
       <Section index={1} label="About me" id="about" content={<About />} />
