@@ -11,6 +11,8 @@
   justify-content: center;
   align-items: center;
   background: $darkColor;
+  opacity: 1;
+  transition: 0.5s;
 
   img {
     animation: blink 2s alternate infinite;
@@ -24,4 +26,8 @@
       opacity: 1;
     }
   }
+}
+
+.hide {
+  opacity: 0;
 }

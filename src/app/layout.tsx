@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useRef, Suspense, useState } from "react";
+
+import loaderStyle from "./../styles/modules/loader.module.scss";
 // import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.scss";
@@ -26,10 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isLoading, setIsLoading] = useState(true);
+  const loaderRef = useRef(null);
   // const flashlightRef = useRef(null);
   useEffect(() => {
-    console.log("READY");
-    setIsLoading(false);
+    const loaderNode: HTMLDivElement = loaderRef.current!;
+    loaderNode.classList.add(loaderStyle.hide);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 550);
     // const flashlightNode: unknown = flashlightRef.current;
     // flashlightEffect(flashlightNode as HTMLDivElement);
   }, []);
@@ -37,7 +43,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {isLoading ? (
-          <Loader />
+          <Loader loaderRef={loaderRef} />
         ) : (
           <>
             <Header />
