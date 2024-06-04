@@ -7,7 +7,9 @@ interface IHeadingProps {
 
 const Heading = (props: IHeadingProps) => {
   return (
-    <h2 className={`${style.heading} hide-heading-line hide-heading-labels`}>
+    <h2
+      className={`${style.heading} ${style["hide-heading-line"]} ${style["hide-heading-labels"]}`}
+    >
       <span className={style.index}>0{props.index}.</span>
       <span className={style.label}>{props.label}</span>
     </h2>

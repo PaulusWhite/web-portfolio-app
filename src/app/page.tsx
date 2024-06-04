@@ -11,11 +11,25 @@ import Skills from "@/components/sections/skills/Skills";
 import Work from "@/components/sections/work/Work";
 import Contacts from "@/components/sections/contacts/Contacts";
 
+//scripts for start animations
+import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
+import setBgLabelSlipEffect from "@/scripts/startAnimations/setBgLabelSlipEffect";
+import setFallEffect from "@/scripts/startAnimations/setFallEffect";
+import setHeadingAppearanceEffect from "@/scripts/startAnimations/setHeadingAppearanceEffect";
+// import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
+
 const Main = () => {
   const { setIsLoading } = useContext(LoaderContext) as ILoaderContext;
 
   useEffect(() => {
     setIsLoading(false);
+
+    setTimeout(() => {
+      setAscentEffect();
+      setBgLabelSlipEffect();
+      setFallEffect();
+      setHeadingAppearanceEffect();
+    }, 500);
   }, []);
   return (
     <main>

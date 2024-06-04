@@ -1,5 +1,4 @@
 const setFallEffect = () => {
-  // element.classList.add("fallInit");
   const elements: NodeListOf<Element> = document.querySelectorAll(".fallInit");
 
   elements.forEach((element: Element) => {

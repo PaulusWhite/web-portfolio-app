@@ -3,9 +3,6 @@
 import style from "./../../styles/modules/common/heading.module.scss";
 
 const setHeadingAppearanceEffect = () => {
-  // heading.classList.add(style["hide-heading-labels"]);
-  // heading.classList.add(style["hide-heading-line"]);
-
   const headings: NodeListOf<Element> = document.querySelectorAll(`.${style.heading}`);
 
   headings.forEach((heading: Element) => {
