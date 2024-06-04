@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 //data
 import data from "./../../../lib/data.json";
 
@@ -20,28 +18,14 @@ import CommingProjectCardItem from "./CommingProjectCardItem";
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
 
-//scripts
-import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
-
 const Work = () => {
   const { projects }: { projects: IProjectItemData[] } = data;
-  const headingRef = useRef(null);
-  const signListRef = useRef(null);
-
-  useEffect(() => {
-    const headingNode: HTMLHeadingElement = headingRef.current!;
-    const signListNode: HTMLUListElement = signListRef.current!;
-
-    setAscentEffect([headingNode, signListNode]);
-  }, []);
 
   return (
     <div className={style.work}>
-      <h3 className={`${style.heading} ascentInit`} ref={headingRef}>
-        Applications I've built
-      </h3>
+      <h3 className={`${style.heading} ascentInit`}>Applications I've built</h3>
 
-      <ul className={`${style["signs-list"]} ascentInit`} ref={signListRef}>
+      <ul className={`${style["signs-list"]} ascentInit`}>
         <SignItem label="Mobile-Friendly" icon={mobileIcon.src} />
         <SignItem label="Modern" icon={modernIcon.src} />
         <SignItem label="Built with love" icon={devIcon.src} />

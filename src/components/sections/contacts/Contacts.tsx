@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 //style
 import style from "./../../../styles/modules/contacts/contacts.module.scss";
 
@@ -13,26 +11,13 @@ import inIcon from "./../../../../public/contacts/in.svg";
 import ContactItem from "./ContactItem";
 import Form from "./Form";
 
-//scripts
-import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
-
 const Contacts = () => {
-  const textRef = useRef(null);
-  const footerRef = useRef(null);
-
-  useEffect(() => {
-    const textBlock: HTMLDivElement = textRef.current!;
-    const footerNode: HTMLDivElement = footerRef.current!;
-
-    setAscentEffect([...Array.from(textBlock.children), footerNode]);
-  }, []);
-
   return (
     <div className={style.contacts}>
       <div className={style["form-field"]}>
         <Form />
 
-        <div className={style.text} ref={textRef}>
+        <div className={style.text}>
           <p className="ascentInit">
             Do you have any questions about me or any kind of propositions? Please, get in touch
             with me!
@@ -47,7 +32,7 @@ const Contacts = () => {
         </div>
       </div>
 
-      <footer ref={footerRef} className="ascentInit">
+      <footer className="ascentInit">
         <ul className={style["contacts-list"]}>
           <ContactItem logo={inIcon.src} link="https://www.linkedin.com/in/exactlypaul/" />
           <ContactItem logo={githubIcon.src} link="https://github.com/PaulusWhite" />

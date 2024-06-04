@@ -1,41 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useContext } from "react";
-
 import style from "./../../styles/modules/about.module.scss";
 import Image from "next/image";
-
-//Context
-import { LoaderContext } from "@/app/ContextProvider";
-import { ILoaderContext } from "@/interfaces/IContext";
 
 //Images
 import photo from "./../../../public/photo.jpg";
 
-//Scripts
-import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
-import setFallEffect from "@/scripts/startAnimations/setFallEffect";
-
 const About = () => {
-  const { isLoading } = useContext(LoaderContext) as ILoaderContext;
-  const speechRef = useRef(null);
-  const photoFrameRef = useRef(null);
-
-  useEffect(() => {
-    const speechBlock: HTMLDivElement = speechRef.current!;
-    const photoFrameNode: HTMLElement = photoFrameRef.current!;
-
-    if (!isLoading) {
-      setTimeout(() => {
-        setAscentEffect(Array.from(speechBlock.children));
-        setFallEffect(photoFrameNode);
-      }, 500);
-    }
-  }, [isLoading]);
-
   return (
     <div className={style.about}>
-      <div className={style.speech} ref={speechRef}>
+      <div className={style.speech}>
         <p className="ascentInit">Glad to see you at my digital place!</p>
 
         <p className="ascentInit">
@@ -53,7 +27,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className={`${style["photo-frame"]} fallInit`} ref={photoFrameRef}>
+      <div className={`${style["photo-frame"]} fallInit`}>
         <Image
           src={photo.src}
           alt="my-photo"

@@ -1,23 +1,26 @@
-const setFallEffect = (element: HTMLElement) => {
+const setFallEffect = () => {
   // element.classList.add("fallInit");
+  const elements: NodeListOf<Element> = document.querySelectorAll(".fallInit");
 
-  const observerCallback = (entries: IntersectionObserverEntry[]) => {
-    const [entry] = entries;
+  elements.forEach((element: Element) => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      const [entry] = entries;
 
-    if (entry.isIntersecting) {
-      entry.target.classList.add("showNode");
-      observer.unobserve(element);
+      if (entry.isIntersecting) {
+        entry.target.classList.add("showNode");
+        observer.unobserve(element);
 
-      setTimeout(() => {
-        element.classList.remove("fallInit");
-        entry.target.classList.remove("showNode");
-      }, 2000);
-    }
-  };
+        setTimeout(() => {
+          element.classList.remove("fallInit");
+          entry.target.classList.remove("showNode");
+        }, 2000);
+      }
+    };
 
-  const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
+    const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
 
-  observer.observe(element);
+    observer.observe(element);
+  });
 };
 
 export default setFallEffect;
