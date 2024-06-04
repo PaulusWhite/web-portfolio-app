@@ -23,7 +23,8 @@ body {
     background-color: $secondColor;
   }
 
-  &:has(.openPortal) {
+  &:has(.openPortal),
+  &:has(.active-loader) {
     overflow: hidden;
   }
 }

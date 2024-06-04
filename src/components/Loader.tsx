@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MutableRefObject, useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { LoaderContext } from "@/app/ContextProvider";
 
 import style from "./../styles/modules/loader.module.scss";
@@ -14,11 +14,14 @@ const Loader = () => {
 
   useEffect(() => {
     const loaderNode: HTMLDivElement = loaderRef.current!;
-    if (!isLoading) loaderNode.classList.add(style.hide);
+    if (!isLoading) {
+      loaderNode.classList.add(style.hide);
+      loaderNode.classList.remove("active-loader");
+    }
   }, [isLoading]);
 
   return (
-    <div className={style.loader} ref={loaderRef}>
+    <div className={`${style.loader} active-loader`} ref={loaderRef}>
       <Image src="/logo.svg" alt="logo icon" width={150} height={150} />
     </div>
   );
