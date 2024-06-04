@@ -37,7 +37,9 @@ const Skills = () => {
 
   return (
     <div className={style.skills}>
-      <h3 ref={firstHeadingRef}>Core Technologies I work with</h3>
+      <h3 ref={firstHeadingRef} className="ascentInit">
+        Core Technologies I work with
+      </h3>
 
       <ul className={style.core} ref={coreListRef}>
         {techs.map((techItem: ISkillItem) => {
@@ -45,7 +47,9 @@ const Skills = () => {
         })}
       </ul>
 
-      <h3 ref={secondHeadingRef}>Tools, methodologies, approaches and systems I use</h3>
+      <h3 ref={secondHeadingRef} className="ascentInit">
+        Tools, methodologies, approaches and systems I use
+      </h3>
 
       <ul className={style.other} ref={otherListRef}>
         {other.map((otherItem: ISkillItem) => {

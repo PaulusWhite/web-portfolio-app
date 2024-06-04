@@ -3,7 +3,7 @@
 import style from "../../styles/modules/common/section.module.scss";
 
 const setBgLabelSlipEffect = (label: HTMLElement) => {
-  label.classList.add(style["hide-bg-label"]);
+  // label.classList.add(style["hide-bg-label"]);
 
   const observerCallback = (entries: IntersectionObserverEntry[]) => {
     const [entry] = entries;

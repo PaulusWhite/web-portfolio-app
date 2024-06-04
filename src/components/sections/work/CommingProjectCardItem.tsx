@@ -21,7 +21,7 @@ const CommingProjectCardItem = () => {
   }, []);
 
   return (
-    <div className={style["comming-project"]} ref={commingProjectRef}>
+    <div className={`${style["comming-project"]} fallInit`} ref={commingProjectRef}>
       <Image src={codingImg.src} fill={true} alt="coding" sizes="100%" />
       <div className={style.veil}></div>
       <p className={style.notice}>Comming soon</p>

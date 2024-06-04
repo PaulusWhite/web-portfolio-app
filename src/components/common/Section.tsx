@@ -25,7 +25,7 @@ const Section = (props: ISectionProps) => {
   return (
     <section className={style.section} id={props.id}>
       <Heading index={props.index} label={props.label} />
-      <span className={style["background-label"]} ref={bgLabelRef}>
+      <span className={`${style["background-label"]} hide-bg-label`} ref={bgLabelRef}>
         {props.label}
       </span>
       <>{props.content}</>

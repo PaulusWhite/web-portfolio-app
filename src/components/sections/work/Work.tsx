@@ -37,11 +37,11 @@ const Work = () => {
 
   return (
     <div className={style.work}>
-      <h3 className={style.heading} ref={headingRef}>
+      <h3 className={`${style.heading} ascentInit`} ref={headingRef}>
         Applications I've built
       </h3>
 
-      <ul className={style["signs-list"]} ref={signListRef}>
+      <ul className={`${style["signs-list"]} ascentInit`} ref={signListRef}>
         <SignItem label="Mobile-Friendly" icon={mobileIcon.src} />
         <SignItem label="Modern" icon={modernIcon.src} />
         <SignItem label="Built with love" icon={devIcon.src} />

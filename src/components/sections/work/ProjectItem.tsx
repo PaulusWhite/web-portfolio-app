@@ -35,7 +35,11 @@ const ProjectItem = (props: IProjectItemProps) => {
 
   return (
     <>
-      <div className={style["project-item"]} ref={itemRef} onClick={() => setShowProjectCard(true)}>
+      <div
+        className={`${style["project-item"]} fallInit`}
+        ref={itemRef}
+        onClick={() => setShowProjectCard(true)}
+      >
         <Image src={`/projects/${img}`} fill={true} sizes="100%" alt="app-preview" />
 
         <div className={style["pop-up"]}>

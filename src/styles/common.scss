@@ -48,7 +48,6 @@ $greenColor: green;
   position: relative;
   bottom: -4rem;
   opacity: 0;
-  transition: 1s ease !important;
 }
 
 //fallEffect
@@ -66,4 +65,5 @@ $greenColor: green;
   right: 0;
   transform: scale(1) rotate(0);
   opacity: 1;
+  transition: 1s ease !important;
 }

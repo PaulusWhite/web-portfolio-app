@@ -1,5 +1,5 @@
 const setFallEffect = (element: HTMLElement) => {
-  element.classList.add("fallInit");
+  // element.classList.add("fallInit");
 
   const observerCallback = (entries: IntersectionObserverEntry[]) => {
     const [entry] = entries;

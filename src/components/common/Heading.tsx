@@ -19,7 +19,7 @@ const Heading = (props: IHeadingProps) => {
   }, []);
 
   return (
-    <h2 className={style.heading} ref={headingRef}>
+    <h2 className={`${style.heading} hide-heading-line hide-heading-labels`} ref={headingRef}>
       <span className={style.index}>0{props.index}.</span>
       <span className={style.label}>{props.label}</span>
     </h2>

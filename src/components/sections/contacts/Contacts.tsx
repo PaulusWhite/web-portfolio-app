@@ -33,19 +33,21 @@ const Contacts = () => {
         <Form />
 
         <div className={style.text} ref={textRef}>
-          <p>
+          <p className="ascentInit">
             Do you have any questions about me or any kind of propositions? Please, get in touch
             with me!
           </p>
-          <p>
+          <p className="ascentInit">
             Also if you have some remarks or you've found some mistakes in my work, I always welcome
             constructive criticism.
           </p>
-          <p>Have you already sent a message to me? I will answer in the shortest time.</p>
+          <p className="ascentInit">
+            Have you already sent a message to me? I will answer in the shortest time.
+          </p>
         </div>
       </div>
 
-      <footer ref={footerRef}>
+      <footer ref={footerRef} className="ascentInit">
         <ul className={style["contacts-list"]}>
           <ContactItem logo={inIcon.src} link="https://www.linkedin.com/in/exactlypaul/" />
           <ContactItem logo={githubIcon.src} link="https://github.com/PaulusWhite" />

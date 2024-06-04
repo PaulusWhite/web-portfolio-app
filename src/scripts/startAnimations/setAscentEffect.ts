@@ -1,6 +1,6 @@
 const setAscentEffect = (elementsArr: Element[]) => {
   elementsArr.forEach((element: Element) => {
-    element.classList.add("ascentInit");
+    // element.classList.add("ascentInit");
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;

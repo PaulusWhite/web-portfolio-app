@@ -3,8 +3,8 @@
 import style from "./../../styles/modules/common/heading.module.scss";
 
 const setHeadingAppearanceEffect = (heading: HTMLElement) => {
-  heading.classList.add(style["hide-heading-labels"]);
-  heading.classList.add(style["hide-heading-line"]);
+  // heading.classList.add(style["hide-heading-labels"]);
+  // heading.classList.add(style["hide-heading-line"]);
 
   const observerCallback = (entries: IntersectionObserverEntry[]) => {
     const [entry] = entries;
