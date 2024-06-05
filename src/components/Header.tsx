@@ -7,6 +7,7 @@ import style from "./../styles/modules/header.module.scss";
 //Components
 import NavLink from "./NavLink";
 import Logo from "./Logo";
+import Button from "./common/Button";
 
 //Scripts
 import displayHeader from "@/scripts/displayHeader";
@@ -29,6 +30,7 @@ const Header = () => {
         <NavLink index={3} label="Experience" anchor="experience" />
         <NavLink index={4} label="Work" anchor="work" />
         <NavLink index={5} label="Contacts" anchor="contacts" />
+        <Button extraClass={`${style["resume-btn"]}`}>Resume</Button>
       </nav>
     </header>
   );

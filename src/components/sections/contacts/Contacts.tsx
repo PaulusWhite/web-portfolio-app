@@ -6,6 +6,7 @@ import style from "./../../../styles/modules/contacts/contacts.module.scss";
 //Icons
 import githubIcon from "./../../../../public/contacts/github.svg";
 import inIcon from "./../../../../public/contacts/in.svg";
+import resumeIcon from "./../../../../public/contacts/resume.svg";
 
 //components
 import ContactItem from "./ContactItem";
@@ -36,6 +37,7 @@ const Contacts = () => {
         <ul className={style["contacts-list"]}>
           <ContactItem logo={inIcon.src} link="https://www.linkedin.com/in/exactlypaul/" />
           <ContactItem logo={githubIcon.src} link="https://github.com/PaulusWhite" />
+          <ContactItem logo={resumeIcon.src} link="" />
         </ul>
         <p className={style.inbox}>
           My inbox: <a href="mailto:exactlypaulus@gmail.com">exactlypaulus@gmail.com</a>
