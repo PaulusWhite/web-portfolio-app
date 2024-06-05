@@ -21,14 +21,27 @@
 
 //css mods for popup
 .error {
-  background-color: rgba($secondColor, 0.9);
+  background-color: rgba($secondColor, 1);
 }
 
 .success {
-  background-color: rgba($greenColor, 0.9);
+  background-color: rgba($greenColor, 1);
 }
 
 //css mod for smooth appearance
 .show {
   opacity: 1;
+}
+
+//adaptive
+@media (max-width: 600px) {
+  .popupPortal {
+    right: 0.5rem;
+    min-width: 10rem;
+    padding: 0.5rem;
+
+    span {
+      font-size: 0.9rem;
+    }
+  }
 }
