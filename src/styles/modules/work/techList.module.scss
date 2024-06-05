@@ -13,3 +13,16 @@
     font-size: 0.8rem;
   }
 }
+
+//adaptive
+@media (max-width: 480px) {
+  .tech-list {
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+
+    .tech {
+      padding: 0.2rem;
+      font-size: 0.5rem;
+    }
+  }
+}
