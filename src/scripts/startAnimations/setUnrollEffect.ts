@@ -4,10 +4,10 @@ const setUnrollEffect = () => {
   elements.forEach((element: HTMLElement) => {
     const parentEl: HTMLElement = element.parentElement!;
 
-    const originalElHeight: string = window.getComputedStyle(element).height;
-    const originalParentElHeight: string = window.getComputedStyle(parentEl).height;
+    const elOriginalHeight: string = window.getComputedStyle(element).height;
+    const parentElOriginalHeight: string = window.getComputedStyle(parentEl).height;
 
-    parentEl.style.height = originalParentElHeight;
+    parentEl.style.height = parentElOriginalHeight;
 
     element.style.height = "0";
     element.style.opacity = "1";
@@ -16,18 +16,18 @@ const setUnrollEffect = () => {
       const [entry] = entries;
 
       if (entry.isIntersecting) {
-        element.style.height = originalElHeight;
+        element.style.height = elOriginalHeight;
         observer.unobserve(parentEl);
 
         setTimeout(() => {
           element.classList.remove("unrolling-el");
           element.removeAttribute("style");
+          parentEl.removeAttribute("style");
         }, 2500);
       }
     };
 
     const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
-
     observer.observe(parentEl);
   });
 };
