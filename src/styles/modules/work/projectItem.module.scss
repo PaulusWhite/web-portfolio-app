@@ -49,3 +49,10 @@
     }
   }
 }
+
+//adaptive
+@media (max-width: 1024px) {
+  .project-item {
+    aspect-ratio: 2/1;
+  }
+}

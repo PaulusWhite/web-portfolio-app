@@ -24,3 +24,26 @@
     margin-top: 5rem;
   }
 }
+
+//adaptive
+
+@media (max-width: 1440px) {
+  .work {
+    .projects {
+      grid-template-columns: 28rem 28rem;
+      grid-template-rows: 14rem;
+      gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .work {
+    .projects {
+      @include flexColumn;
+      align-items: stretch;
+      width: 100%;
+      max-width: 40rem;
+    }
+  }
+}

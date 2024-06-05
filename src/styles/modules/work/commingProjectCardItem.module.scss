@@ -22,3 +22,10 @@
     font-size: 2rem;
   }
 }
+
+//adaptive
+@media (max-width: 1024px) {
+  .comming-project {
+    aspect-ratio: 2/1;
+  }
+}
