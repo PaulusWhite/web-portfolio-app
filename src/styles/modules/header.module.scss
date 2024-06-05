@@ -18,3 +18,10 @@
 .hide {
   top: -10rem;
 }
+
+//adaptive
+@media (max-width: 1025px) {
+  .header {
+    display: none;
+  }
+}

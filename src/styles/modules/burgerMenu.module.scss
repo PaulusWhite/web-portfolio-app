@@ -27,3 +27,10 @@
     transition: 0.2s;
   }
 }
+
+//adaptive
+@media (max-width: 1025px) {
+  .burger-menu {
+    display: flex;
+  }
+}

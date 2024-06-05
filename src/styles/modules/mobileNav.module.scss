@@ -1,0 +1,22 @@
+@import "./../common.scss";
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  display: none;
+  width: 100%;
+
+  .mobile-nav-list {
+    @include flexColumn;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1025px){
+  .mobile-nav{
+    display: block;
+  }
+}

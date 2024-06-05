@@ -17,6 +17,7 @@ import Header from "@/components/Header";
 // import Flashlight from "@/components/Flashlight";
 import BurgetMenu from "@/components/BurgerMenu";
 import Loader from "@/components/Loader";
+import MobileNav from "@/components/MobileNav";
 
 //scripts
 // import flashlightEffect from "@/scripts/flashlightEffect";
@@ -35,6 +36,7 @@ export default function RootLayout({
           {children}
           {/* <Flashlight node={flashlightRef} /> */}
           <BurgetMenu />
+          <MobileNav />
         </LoaderContextProvider>
       </body>
     </html>
