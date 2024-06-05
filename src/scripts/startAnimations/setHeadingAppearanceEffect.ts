@@ -19,7 +19,7 @@ const setHeadingAppearanceEffect = () => {
       }
     };
 
-    const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
+    const observer = new IntersectionObserver(observerCallback, { threshold: 0.5 });
     observer.observe(heading);
   });
 };
