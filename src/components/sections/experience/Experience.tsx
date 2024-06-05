@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import style from "./../../../styles/modules/experience/experience.module.scss";
 import descListStyle from "./../../../styles/modules/experience/description.module.scss";
 
@@ -14,13 +14,9 @@ import { IDataRadioItem, IDataRadioValue } from "@/interfaces/IData";
 import DescriptionList from "./DescriptionList";
 import RadioBtn from "./RadioBtn";
 
-//scripts
-import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
-
 const Experience = () => {
   const radioList: IDataRadioItem[] = data.radioList as IDataRadioItem[];
   const defaultValue: IDataRadioValue = radioList[0].value;
-  const expRef = useRef(null);
   const descListRef = useRef(null);
 
   const [activeInput, setInput] = useState<IDataRadioValue>(defaultValue);
@@ -34,29 +30,27 @@ const Experience = () => {
     }, 350);
   };
 
-  useEffect(() => {
-    const expNode: HTMLDivElement = expRef.current!;
-    setUnrollEffect(expNode);
-  }, []);
-
   return (
-    <div className={style.experience} ref={expRef}>
-      <div className={style.radioList}>
-        {radioList.map((radioItem: IDataRadioItem) => {
-          const isChecked: boolean = activeInput === radioItem.value;
+    <div className={style["exp-wrapper"]}>
+      <div className={`${style.experience} unrolling-el`}>
+        <div className={style.radioList}>
+          {radioList.map((radioItem: IDataRadioItem) => {
+            const isChecked: boolean = activeInput === radioItem.value;
 
-          return (
-            <RadioBtn
-              key={radioItem.id}
-              label={radioItem.label}
-              value={radioItem.value}
-              isChecked={isChecked}
-              setInput={changeInput}
-            />
-          );
-        })}
+            return (
+              <RadioBtn
+                key={radioItem.id}
+                label={radioItem.label}
+                value={radioItem.value}
+                isChecked={isChecked}
+                setInput={changeInput}
+              />
+            );
+          })}
+        </div>
+
+        <DescriptionList {...data.descriptionList[activeInput]} descListRef={descListRef} />
       </div>
-      <DescriptionList {...data.descriptionList[activeInput]} descListRef={descListRef} />
     </div>
   );
 };

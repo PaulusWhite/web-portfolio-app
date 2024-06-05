@@ -67,3 +67,9 @@ $greenColor: green;
   opacity: 1;
   transition: 1s ease !important;
 }
+
+//unrollEffect
+.unrolling-el {
+  overflow: hidden !important;
+  opacity: 0;
+}

@@ -1,23 +1,35 @@
-const setUnrollEffect = (element: HTMLElement) => {
-  const originalHeight: string = window.getComputedStyle(element).height;
-  element.style.height = "1px";
+const setUnrollEffect = () => {
+  const elements: NodeListOf<HTMLElement> = document.querySelectorAll(".unrolling-el");
 
-  const observerCallback = (entries: IntersectionObserverEntry[]) => {
-    const [entry] = entries;
+  elements.forEach((element: HTMLElement) => {
+    const parentEl: HTMLElement = element.parentElement!;
 
-    if (entry.isIntersecting) {
-      const target: HTMLElement = entry.target as HTMLElement;
-      target.style.height = originalHeight;
-      observer.unobserve(element);
-      setTimeout(() => {
-        target.removeAttribute("style");
-      }, 2000);
-    }
-  };
+    const originalElHeight: string = window.getComputedStyle(element).height;
+    const originalParentElHeight: string = window.getComputedStyle(parentEl).height;
 
-  const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
+    parentEl.style.height = originalParentElHeight;
 
-  observer.observe(element);
+    element.style.height = "0";
+    element.style.opacity = "1";
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      const [entry] = entries;
+
+      if (entry.isIntersecting) {
+        element.style.height = originalElHeight;
+        observer.unobserve(parentEl);
+
+        setTimeout(() => {
+          element.classList.remove("unrolling-el");
+          element.removeAttribute("style");
+        }, 2500);
+      }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
+
+    observer.observe(parentEl);
+  });
 };
 
 export default setUnrollEffect;

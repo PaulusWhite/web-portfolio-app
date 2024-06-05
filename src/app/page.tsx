@@ -16,7 +16,7 @@ import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";
 import setBgLabelSlipEffect from "@/scripts/startAnimations/setBgLabelSlipEffect";
 import setFallEffect from "@/scripts/startAnimations/setFallEffect";
 import setHeadingAppearanceEffect from "@/scripts/startAnimations/setHeadingAppearanceEffect";
-// import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
+import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
 
 const Main = () => {
   const { setIsLoading } = useContext(LoaderContext) as ILoaderContext;
@@ -29,6 +29,7 @@ const Main = () => {
       setBgLabelSlipEffect();
       setFallEffect();
       setHeadingAppearanceEffect();
+      setUnrollEffect();
     }, 500);
   }, []);
   return (

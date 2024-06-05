@@ -1,4 +1,4 @@
-import { useEffect, useRef, useReducer, FormEvent, useState } from "react";
+import { useReducer, FormEvent, useState } from "react";
 import { createPortal } from "react-dom";
 
 import style from "./../../../styles/modules/contacts/form.module.scss";
@@ -12,8 +12,6 @@ import { IValidationResult } from "@/scripts/formValidations";
 import { IPostRequestBody } from "@/interfaces/IPostMessageByEmail";
 import { IResponseData } from "@/interfaces/IPostMessageByEmail";
 
-//scripts
-import setUnrollEffect from "@/scripts/startAnimations/setUnrollEffect";
 import { isFormDataValid } from "@/scripts/formValidations";
 
 import formReducer from "@/lib/formReducer";
@@ -26,8 +24,6 @@ const INIT_REDUCER_STATE: IReducerState = {
 };
 
 const Form = () => {
-  const formRef = useRef(null);
-
   const [state, dispatch] = useReducer(formReducer, INIT_REDUCER_STATE);
   const { nameValue, mailValue, messageValue } = state;
 
@@ -76,38 +72,35 @@ const Form = () => {
     setSuccessMessage(false);
   };
 
-  useEffect(() => {
-    const formNode: HTMLFormElement = formRef.current!;
-    setUnrollEffect(formNode);
-  }, []);
-
   return (
     <>
-      <form className={style.form} ref={formRef} onSubmit={(e) => submitForm(e)}>
-        <h3>Write me a letter</h3>
+      <form className={style.form} onSubmit={(e) => submitForm(e)}>
+        <fieldset className={`${style.fieldset} unrolling-el`}>
+          <h3>Write me a letter</h3>
 
-        <input
-          type="text"
-          placeholder="You Name"
-          value={nameValue}
-          onChange={(e) => dispatch({ type: "name", payload: e.target.value })}
-        />
+          <input
+            type="text"
+            placeholder="You Name"
+            value={nameValue}
+            onChange={(e) => dispatch({ type: "name", payload: e.target.value })}
+          />
 
-        <input
-          type="text"
-          placeholder="You Email"
-          value={mailValue}
-          onChange={(e) => dispatch({ type: "mail", payload: e.target.value })}
-        />
+          <input
+            type="text"
+            placeholder="You Email"
+            value={mailValue}
+            onChange={(e) => dispatch({ type: "mail", payload: e.target.value })}
+          />
 
-        <textarea
-          rows={10}
-          placeholder="Your Message"
-          value={messageValue}
-          onChange={(e) => dispatch({ type: "message", payload: e.target.value })}
-        />
+          <textarea
+            rows={10}
+            placeholder="Your Message"
+            value={messageValue}
+            onChange={(e) => dispatch({ type: "message", payload: e.target.value })}
+          />
 
-        <Button>Get in touch</Button>
+          <Button>Get in touch</Button>
+        </fieldset>
       </form>
 
       {isPopupMessage &&
