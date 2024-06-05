@@ -50,6 +50,14 @@
   }
 }
 
+@media (max-width: 600px) {
+  .contacts {
+    .form-field {
+      padding: 0;
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .contacts {
     .form-field {

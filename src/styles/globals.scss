@@ -35,6 +35,10 @@ body {
   outline: none;
 }
 
+main {
+  overflow: hidden;
+}
+
 input[type="radio"] {
   display: none;
 }
