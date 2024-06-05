@@ -29,3 +29,14 @@
     }
   }
 }
+
+//adaptive
+@media (max-width: 1025px) {
+  .about {
+    flex-direction: column-reverse;
+
+    .speech {
+      font-size: 1.1rem;
+    }
+  }
+}
