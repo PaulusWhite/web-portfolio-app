@@ -34,9 +34,26 @@
 @media (max-width: 1024px) {
   .about {
     flex-direction: column-reverse;
+    gap: 3rem;
 
     .speech {
       font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    flex-direction: column-reverse;
+
+    .speech {
+      font-size: 1rem;
+    }
+
+    .photo-frame {
+      width: 100%;
+      height: unset;
+      aspect-ratio: 1/1;
     }
   }
 }
