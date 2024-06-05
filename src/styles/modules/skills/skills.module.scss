@@ -23,3 +23,24 @@
     margin: 2rem 0;
   }
 }
+
+//adaptive
+@media (max-width: 1024px) {
+  .skills {
+    .core,
+    .other {
+      justify-content: space-around;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .skills {
+    .core,
+    .other {
+      justify-content: unset;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+    }
+  }
+}
