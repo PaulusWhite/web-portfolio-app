@@ -9,7 +9,9 @@ interface ISignItemProps {
 
 const SignItem = (props: ISignItemProps) => (
   <li className={style.signItem}>
-    <Image src={props.icon} width={100} height={100} alt="sign image" />
+    <div className={style["img-frame"]}>
+      <Image src={props.icon} fill={true} alt="sign image" />
+    </div>
     <span className={style.label}>{props.label}</span>
   </li>
 );

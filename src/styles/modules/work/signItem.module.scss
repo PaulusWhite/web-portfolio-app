@@ -4,4 +4,35 @@
   @include flexColumn;
   align-items: center;
   gap: 1rem;
+
+  .img-frame {
+    position: relative;
+    width: 6rem;
+    aspect-ratio: 1/1;
+  }
+}
+
+//adaptive
+@media (max-width: 600px) {
+  .signItem {
+    .img-frame {
+      width: 4rem;
+    }
+
+    .label {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .signItem {
+    .img-frame {
+      width: 2rem;
+    }
+
+    .label {
+      font-size: 0.6rem;
+    }
+  }
 }
