@@ -20,3 +20,31 @@
     }
   }
 }
+
+//adaptive
+@media (max-width: 1024px) {
+  .radio-btn {
+    @include underLine;
+    gap: 0;
+    flex-direction: column;
+    width: unset;
+    padding: 0.4rem;
+    font-size: 1rem;
+
+    &:has(input[type="radio"]:checked) {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .radio-btn {
+    padding: 1rem;
+
+    &::after {
+      content: none;
+    }
+  }
+}

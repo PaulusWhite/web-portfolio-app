@@ -17,3 +17,11 @@
     border-radius: 100%;
   }
 }
+
+//adaptive
+
+@media (max-width: 600px) {
+  .bullet-point {
+    font-size: 0.9rem;
+  }
+}
