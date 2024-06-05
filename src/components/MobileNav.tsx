@@ -3,10 +3,12 @@
 import style from "./../styles/modules/mobileNav.module.scss";
 
 import Nav from "./Nav";
+import Logo from "./Logo";
 
 const MobileNav = () => (
   <div className={style["mobile-nav"]}>
-    <Nav extraClass={`${style["mobile-nav-list"]}`} />
+    <Logo />
+    <Nav />
   </div>
 );
 

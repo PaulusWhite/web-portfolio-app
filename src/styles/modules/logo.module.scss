@@ -40,3 +40,10 @@
     font-size: 2.3rem;
   }
 }
+
+//adaptive
+@media (max-width: 1025px) {
+  .logo {
+    margin-right: auto;
+  }
+}

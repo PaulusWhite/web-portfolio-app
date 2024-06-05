@@ -6,17 +6,22 @@
   bottom: 0;
   left: -100%;
   display: none;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-
-  .mobile-nav-list {
-    @include flexColumn;
-    align-items: center;
-    width: 100%;
-  }
+  padding: 1rem;
+  background: $darkColor;
+  opacity: 0;
+  transition: 0.2s;
 }
 
-@media (max-width: 1025px){
-  .mobile-nav{
-    display: block;
+.show {
+  opacity: 1;
+  left: 0;
+}
+
+@media (max-width: 1025px) {
+  .mobile-nav {
+    display: flex;
   }
 }
