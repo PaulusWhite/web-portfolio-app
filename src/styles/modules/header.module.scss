@@ -1,3 +1,5 @@
+@import "./../common.scss";
+
 .header {
   position: fixed;
   z-index: 4;
@@ -5,25 +7,11 @@
   left: 0;
   right: 0;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1.3rem;
   backdrop-filter: blur(0.5rem);
   transition: 0.8s;
-
-  nav {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-left: auto;
-
-    .resume-btn {
-      margin: 0;
-      padding: 0.3rem;
-      font-size: 1.3rem;
-      font-weight: unset;
-    }
-  }
 }
 
 //css mod for header
