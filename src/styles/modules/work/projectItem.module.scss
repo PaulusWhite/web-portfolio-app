@@ -15,6 +15,12 @@
   align-items: center;
   cursor: pointer;
 
+  @media (pointer: coarse) {
+    .pop-up {
+      top: 0 !important;
+    }
+  }
+
   @media (pointer: fine) {
     &:hover {
       .pop-up {
