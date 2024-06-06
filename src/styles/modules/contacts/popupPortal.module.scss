@@ -36,7 +36,10 @@
 //adaptive
 @media (max-width: 600px) {
   .popupPortal {
-    right: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    right: unset;
+    width: 90%;
     min-width: 10rem;
     padding: 0.5rem;
 
