@@ -7,7 +7,7 @@ const displayMobileNav = (isClosed?: true) => {
 
   transformBurgerMenu();
 
-  if (isClosed && mobileNav.classList.contains(`${style.show}`)) {
+  if (isClosed) {
     mobileNav.classList.remove(`${style.show}`);
     mobileNav.classList.remove("show-mobile-nav");
 
