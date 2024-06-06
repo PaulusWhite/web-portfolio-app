@@ -7,7 +7,7 @@ import displayMobileNav from "@/scripts/displayMobileNav";
 
 const BurgetMenu = () => {
   return (
-    <div className={style["burger-menu"]} onClick={displayMobileNav}>
+    <div className={style["burger-menu"]} onClick={() => displayMobileNav()}>
       <span></span>
       <span></span>
       <span></span>
