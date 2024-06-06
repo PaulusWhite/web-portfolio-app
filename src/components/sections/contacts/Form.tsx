@@ -64,6 +64,7 @@ const Form = () => {
     }
 
     setPopupMessage(true);
+    dispatch({ type: "reset", payload: "" });
   };
 
   const closePopupPortal = () => {

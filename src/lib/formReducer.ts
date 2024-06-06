@@ -8,7 +8,7 @@ interface IReducerState {
 }
 
 interface IAction {
-  type: "name" | "mail" | "message";
+  type: "name" | "mail" | "message" | "reset";
   payload: string;
 }
 
@@ -19,8 +19,9 @@ const formReducer = (state: IReducerState, action: IAction) => {
   if (type === "name" && isInputValueValid(payload as string))
     return { ...state, nameValue: payload };
   if (type === "mail" && isInputValueValid(payload as string))
-    return { ...state, mailValue: payload };
+    return { ...state, mailValue: payload.trim() };
   if (type === "message") return { ...state, messageValue: payload };
+  if (type === "reset") return { nameValue: "", mailValue: "", messageValue: "" };
 
   return state;
 };
