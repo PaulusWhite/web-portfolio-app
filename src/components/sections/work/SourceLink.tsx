@@ -18,7 +18,9 @@ const SourceLink = (props: ISourceLinkProps) => {
         <h3>{props.type}</h3>
       </div>
 
-      <a href={props.link}>{props.link}</a>
+      <a href={props.link} target="_blank">
+        {props.link}
+      </a>
     </div>
   );
 };
