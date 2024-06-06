@@ -5,6 +5,12 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+  transition: 0.1s;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transform: scale(0.95);
+  }
 
   * {
     transition: 0.2s;

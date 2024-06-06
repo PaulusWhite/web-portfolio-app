@@ -9,6 +9,7 @@
   letter-spacing: 2px;
   background-color: $secondColor;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   &:active {
     @include neonEffect;

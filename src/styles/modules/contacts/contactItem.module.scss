@@ -3,6 +3,12 @@
   justify-content: center;
   align-items: center;
   transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transition: 0.1s;
+    transform: scale(1) !important;
+  }
 
   @media (pointer: fine) {
     &:hover {
