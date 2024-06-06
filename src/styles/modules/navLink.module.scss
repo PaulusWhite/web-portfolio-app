@@ -27,6 +27,9 @@
 //adaptive
 @media (max-width: 1024px) {
   .nav-link {
+    width: 100%;
+    max-width: 19rem;
+
     .nav-link__index {
       font-size: 2rem;
     }
