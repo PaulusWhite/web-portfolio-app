@@ -44,7 +44,7 @@
 .hide-heading-line {
   &::after {
     content: "";
-    width: 0;
+    width: 0 !important;
   }
 }
 
@@ -71,8 +71,8 @@
     }
 
     &::after {
-      width: 80%;
-      margin-left: 1.2rem;
+      width: calc(100% - 16rem);
+      margin-left: 1rem;
     }
   }
 }
