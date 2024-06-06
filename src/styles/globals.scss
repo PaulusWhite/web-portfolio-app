@@ -22,18 +22,12 @@ body {
   min-height: 100vh;
   margin: 0;
   color: $mainColor;
-  overscroll-behavior: contain;
+  overscroll-behavior-y: contain;
 
   *::selection {
     color: $mainColor;
     background-color: $secondColor;
   }
-
-  // &:has(.openPortal),
-  // &:has(.active-loader),
-  // &:has(.show-mobile-nav) {
-  //   // overflow: hidden;
-  // }
 }
 
 * {
