@@ -17,6 +17,10 @@ const Loader = () => {
     if (!isLoading) {
       loaderNode.classList.add(style.hide);
       loaderNode.classList.remove("active-loader");
+
+      setTimeout(() => {
+        loaderNode.classList.add(style.none);
+      }, 250);
     }
   }, [isLoading]);
 
