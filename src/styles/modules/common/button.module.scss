@@ -10,6 +10,13 @@
   background-color: $secondColor;
   cursor: pointer;
 
+  &:active {
+    @include neonEffect;
+    color: $mainColor;
+    transform: scale(0.95);
+    transition: 0.1s;
+  }
+
   @media (pointer: fine) {
     &:hover {
       @include neonEffect;

@@ -3,6 +3,17 @@
 .nav-link {
   @include underLine;
 
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transition: 0.1s;
+    transform: scale(0.9);
+
+    .link-point__label {
+      color: $secondColor;
+    }
+  }
+
   @media (pointer: fine) {
     &:hover {
       .link-point__label {
