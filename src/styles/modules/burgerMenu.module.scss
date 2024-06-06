@@ -9,22 +9,52 @@
   right: 1.2rem;
   gap: 0.5rem;
   width: 3rem;
+  height: 1.9rem;
   cursor: pointer;
   transition: 0.2s;
 
   @media (pointer: fine) {
     &:hover {
       span {
-        box-shadow: 0 0 0.2rem $secondColor;
+        box-shadow: 0 0 0.5rem $secondColor;
       }
     }
   }
 
   span {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 0.3rem;
     background-color: $secondColor;
-    transition: 0.2s;
+    transition: 0.3s;
+    transform: rotate(360deg);
+  }
+
+  .middle-slice {
+    opacity: 1;
+  }
+}
+
+//css-mods
+.active-menu {
+  span {
+    position: absolute;
+    top: 50%;
+  }
+
+  .top-slice {
+    transform: rotate(225deg);
+  }
+
+  .middle-slice {
+    transform: rotate(225deg);
+    opacity: 0;
+  }
+
+  .bottom-slice {
+    transform: rotate(135deg);
   }
 }
 

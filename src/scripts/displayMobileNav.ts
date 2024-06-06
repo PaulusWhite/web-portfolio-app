@@ -1,7 +1,11 @@
 import style from "./../styles/modules/mobileNav.module.scss";
 
+import transformBurgerMenu from "./transformBurgerMenu";
+
 const displayMobileNav = (isClosed?: true) => {
   const mobileNav: HTMLDivElement = document.querySelector(`.${style["mobile-nav"]}`)!;
+
+  transformBurgerMenu();
 
   if (isClosed && mobileNav.classList.contains(`${style.show}`)) {
     mobileNav.classList.remove(`${style.show}`);
