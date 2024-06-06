@@ -6,6 +6,12 @@ html {
   font-size: 16px;
   letter-spacing: 1.5px;
   scroll-behavior: smooth;
+
+  &:has(body .openPortal),
+  &:has(body .active-loader),
+  &:has(body .show-mobile-nav) {
+    overflow: hidden;
+  }
 }
 
 body {
@@ -16,16 +22,11 @@ body {
   min-height: 100vh;
   margin: 0;
   color: $mainColor;
+  overscroll-behavior-y: contain;
 
   *::selection {
     color: $mainColor;
     background-color: $secondColor;
-  }
-
-  &:has(.openPortal),
-  &:has(.active-loader),
-  &:has(.show-mobile-nav) {
-    overflow: hidden;
   }
 }
 

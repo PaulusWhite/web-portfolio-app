@@ -3,11 +3,12 @@
 .sheet {
   position: fixed;
   z-index: 5;
-  top: 0;
-  bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  height: 100vh;
   background: rgba($darkColor, 0.8);
+  overflow-y: auto;
+  overflow-x: hidden;
 
   .project-card-portal {
     @include flexColumn;
@@ -17,9 +18,9 @@
     bottom: 0;
     right: -30rem;
     width: 30rem;
+    height: 100vh;
     background: $secondDarkColor;
     transition: 0.3s;
-    overflow-y: auto;
 
     .info {
       @include flexColumn;
