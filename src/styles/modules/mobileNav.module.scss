@@ -8,11 +8,13 @@
   display: none;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
   width: 100%;
   padding: 1rem;
   background: $darkColor;
   opacity: 0;
   transition: 0.2s;
+  overflow-y: auto;
 }
 
 .show {
