@@ -24,7 +24,8 @@ body {
   }
 
   &:has(.openPortal),
-  &:has(.active-loader) {
+  &:has(.active-loader),
+  &:has(.mobile-nav) {
     overflow: hidden;
   }
 }
