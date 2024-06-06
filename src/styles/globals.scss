@@ -15,7 +15,6 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  padding: 0 1.5rem;
   color: $mainColor;
 
   *::selection {
@@ -37,6 +36,7 @@ body {
 }
 
 main {
+  padding: 0 1.5rem;
   overflow: hidden;
 }
 
