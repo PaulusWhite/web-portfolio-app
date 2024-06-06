@@ -14,13 +14,9 @@ import LoaderContextProvider from "./ContextProvider";
 
 //Components
 import Header from "@/components/Header";
-// import Flashlight from "@/components/Flashlight";
 import BurgetMenu from "@/components/BurgerMenu";
 import Loader from "@/components/Loader";
 import MobileNav from "@/components/MobileNav";
-
-//scripts
-// import flashlightEffect from "@/scripts/flashlightEffect";
 
 export default function RootLayout({
   children,
@@ -34,7 +30,6 @@ export default function RootLayout({
           <Loader />
           <Header />
           {children}
-          {/* <Flashlight node={flashlightRef} /> */}
           <BurgetMenu />
           <MobileNav />
         </LoaderContextProvider>

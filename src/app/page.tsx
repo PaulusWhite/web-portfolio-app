@@ -32,6 +32,7 @@ const Main = () => {
       setUnrollEffect();
     }, 500);
   }, []);
+
   return (
     <main>
       <Section index={1} label="About me" id="about" content={<About />} />
