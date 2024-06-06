@@ -14,12 +14,13 @@ const Loader = () => {
 
   useEffect(() => {
     const loaderNode: HTMLDivElement = loaderRef.current!;
+
     if (!isLoading) {
-      loaderNode.classList.add(style.hide);
+      loaderNode.classList.add("hide");
       loaderNode.classList.remove("active-loader");
 
       setTimeout(() => {
-        loaderNode.classList.add(style.none);
+        loaderNode.classList.add("none");
       }, 250);
     }
   }, [isLoading]);

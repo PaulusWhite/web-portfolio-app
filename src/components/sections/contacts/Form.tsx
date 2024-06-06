@@ -1,4 +1,4 @@
-import { useReducer, FormEvent, useState } from "react";
+import { useReducer, FormEvent, useState, useContext } from "react";
 import { createPortal } from "react-dom";
 
 import style from "./../../../styles/modules/contacts/form.module.scss";
@@ -6,6 +6,10 @@ import style from "./../../../styles/modules/contacts/form.module.scss";
 //components
 import Button from "@/components/common/Button";
 import PopupPortal from "./PopupPortal";
+
+//context
+import { LoaderContext } from "@/app/ContextProvider";
+import { ILoaderContext } from "@/interfaces/IContext";
 
 //interfaces
 import { IValidationResult } from "@/scripts/formValidations";
@@ -26,6 +30,7 @@ const INIT_REDUCER_STATE: IReducerState = {
 const Form = () => {
   const [state, dispatch] = useReducer(formReducer, INIT_REDUCER_STATE);
   const { nameValue, mailValue, messageValue } = state;
+  const { setIsSpinnerLoading } = useContext(LoaderContext) as ILoaderContext;
 
   const [isPopupMessage, setPopupMessage] = useState<boolean>(false);
   const [errorsArr, setErrors] = useState<false | string[]>(false);
@@ -42,6 +47,8 @@ const Form = () => {
       setPopupMessage(true);
       return;
     }
+
+    setIsSpinnerLoading(true);
 
     const requestBody: IPostRequestBody = {
       name: nameValue,
@@ -63,6 +70,7 @@ const Form = () => {
       setSuccessMessage(message);
     }
 
+    setIsSpinnerLoading(false);
     setPopupMessage(true);
     dispatch({ type: "reset", payload: "" });
   };

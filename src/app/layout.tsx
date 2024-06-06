@@ -17,6 +17,7 @@ import Header from "@/components/Header";
 import BurgetMenu from "@/components/BurgerMenu";
 import Loader from "@/components/Loader";
 import MobileNav from "@/components/MobileNav";
+import Spinner from "@/components/Spinner";
 
 export default function RootLayout({
   children,
@@ -27,11 +28,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <LoaderContextProvider>
-          <Loader />
           <Header />
           {children}
           <BurgetMenu />
           <MobileNav />
+          <Loader />
+          <Spinner />
         </LoaderContextProvider>
       </body>
     </html>

@@ -1,0 +1,42 @@
+@import "./../common.scss";
+
+.spinner-wrapper {
+  @include commonLoadingStyle;
+  background: rgba($mainColor, 0.8);
+
+  .spinner {
+    color: $secondColor;
+  }
+
+  .spinner,
+  .spinner:after {
+    box-sizing: border-box;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+
+  .spinner:after {
+    content: " ";
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem;
+    border-radius: 50%;
+    border: 6.4px solid currentColor;
+    border-color: currentColor transparent currentColor transparent;
+    animation: spinner 1.2s linear infinite;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

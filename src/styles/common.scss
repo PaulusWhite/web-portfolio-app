@@ -41,6 +41,32 @@ $greenColor: green;
   transition: 0.2s;
 }
 
+@mixin commonLoadingStyle {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $darkColor;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+//common css mods
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.none {
+  display: none;
+}
+
+//
 //css mods for animations (using JS)
 
 //ascent effect
