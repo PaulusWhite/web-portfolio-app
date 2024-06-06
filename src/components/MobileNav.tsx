@@ -6,7 +6,7 @@ import Nav from "./Nav";
 import Logo from "./Logo";
 
 const MobileNav = () => (
-  <div className={`${style["mobile-nav"]} mobile-nav`}>
+  <div className={style["mobile-nav"]}>
     <Logo />
     <Nav />
   </div>
