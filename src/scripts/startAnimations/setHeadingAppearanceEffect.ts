@@ -14,7 +14,7 @@ const setHeadingAppearanceEffect = () => {
 
         setTimeout(() => {
           entry.target.classList.remove(style["hide-heading-labels"]);
-        }, 1000);
+        }, 500);
         observer.unobserve(heading);
       }
     };
