@@ -42,6 +42,9 @@
 
 @media (max-width: 1024px) {
   .section {
+    min-height: unset;
+    margin: 2rem 0;
+
     .background-label {
       font-size: 4rem;
       left: 0;

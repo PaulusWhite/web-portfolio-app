@@ -67,7 +67,7 @@
     .experience {
       flex-direction: column;
       gap: 1rem;
-      height: 39rem;
+      height: unset;
 
       .radioList {
         flex-direction: row;
@@ -90,7 +90,6 @@
 @media (max-width: 600px) {
   .exp-wrapper {
     .experience {
-      height: 55rem;
       gap: 3rem;
 
       .radioList {
