@@ -6,7 +6,6 @@ html {
   font-size: 16px;
   letter-spacing: 1.5px;
   scroll-behavior: smooth;
-  overflow-y: auto;
 }
 
 body {
@@ -23,11 +22,11 @@ body {
     background-color: $secondColor;
   }
 
-  &:has(.openPortal),
-  &:has(.active-loader),
-  &:has(.show-mobile-nav) {
-    overflow: hidden;
-  }
+  // &:has(.openPortal),
+  // &:has(.active-loader),
+  // &:has(.show-mobile-nav) {
+  //   // overflow: hidden;
+  // }
 }
 
 * {

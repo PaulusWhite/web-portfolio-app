@@ -15,6 +15,7 @@
   opacity: 0;
   transition: 0.2s;
   overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .show {
