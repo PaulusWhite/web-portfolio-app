@@ -14,7 +14,7 @@ interface INavLinkProps {
 const NavLink = (props: INavLinkProps) => (
   <Link
     className={style["nav-link"]}
-    href={`#${props.anchor}`}
+    href={`/#${props.anchor}`}
     onClick={() => displayMobileNav(true)}
   >
     <span className={style["nav-link__index"]}>0{props.index}.</span>
