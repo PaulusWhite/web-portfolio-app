@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavLink from "./NavLink";
 
 import style from "./../styles/modules/nav.module.scss";
@@ -13,7 +14,9 @@ const Nav = () => {
       <NavLink index={3} label="Experience" anchor="experience" />
       <NavLink index={4} label="Work" anchor="work" />
       <NavLink index={5} label="Contacts" anchor="contacts" />
-      <Button extraClass={`${style["resume-btn"]}`}>Resume</Button>
+      <Link href="/files/resume.pdf" target="_blank">
+        <Button extraClass={`${style["resume-btn"]}`}>Resume</Button>
+      </Link>
     </nav>
   );
 };
