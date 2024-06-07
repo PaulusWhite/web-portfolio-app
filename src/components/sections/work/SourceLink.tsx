@@ -15,11 +15,11 @@ const SourceLink = (props: ISourceLinkProps) => {
     <div className={style["source-link"]}>
       <div className={style["label"]}>
         <Image src={imgPath} alt="source image icon" width={30} height={30} />
-        <h3>{props.type}</h3>
+        <h3>{type}</h3>
       </div>
 
-      <a href={props.link} target="_blank">
-        {props.link}
+      <a href={link} target="_blank">
+        {link}
       </a>
     </div>
   );

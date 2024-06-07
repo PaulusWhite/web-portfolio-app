@@ -16,8 +16,8 @@ import RadioBtn from "./RadioBtn";
 const Experience = () => {
   const radioList: IDataRadioItem[] = data.radioList as IDataRadioItem[];
   const defaultValue: IDataRadioValue = radioList[0].value;
-  const descListRef = useRef(null);
 
+  const descListRef = useRef(null);
   const [activeInput, setInput] = useState<IDataRadioValue>(defaultValue);
 
   const changeInput = (value: IDataRadioValue) => {

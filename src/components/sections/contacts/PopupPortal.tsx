@@ -8,6 +8,8 @@ interface IPopupPortalProps {
   closePopupPortal: () => void;
 }
 
+const TIME_TO_POPUP_FINISH: number = 5100;
+
 const PopupPortal = (props: IPopupPortalProps) => {
   const { errorsArr, successMessage, closePopupPortal } = props;
   const extraClass = errorsArr ? "error" : "success";
@@ -36,7 +38,7 @@ const PopupPortal = (props: IPopupPortalProps) => {
       setTimeout(() => {
         closePopupPortal();
       }, 350);
-    }, 5100);
+    }, TIME_TO_POPUP_FINISH);
 
     return () => {
       clearTimeout(appearanceID);

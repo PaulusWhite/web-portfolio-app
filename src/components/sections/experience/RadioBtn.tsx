@@ -10,17 +10,21 @@ interface IRadioBtnProps {
   setInput: (newValue: IDataRadioValue) => void;
 }
 
-const RadioBtn = (props: IRadioBtnProps) => (
-  <label className={style["radio-btn"]}>
-    <input
-      type="radio"
-      name="radioList"
-      value={props.value}
-      checked={Boolean(props.isChecked)}
-      onChange={(e) => props.setInput(e.target.value as IDataRadioValue)}
-    />
-    {props.label}
-  </label>
-);
+const RadioBtn = (props: IRadioBtnProps) => {
+  const { label, value, isChecked, setInput } = props;
+
+  return (
+    <label className={style["radio-btn"]}>
+      <input
+        type="radio"
+        name="radioList"
+        value={value}
+        checked={Boolean(isChecked)}
+        onChange={(e) => setInput(e.target.value as IDataRadioValue)}
+      />
+      {label}
+    </label>
+  );
+};
 
 export default RadioBtn;

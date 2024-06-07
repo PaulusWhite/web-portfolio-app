@@ -6,13 +6,13 @@ import style from "./../../../styles/modules/work/work.module.scss";
 //components
 import SignItem from "./SignItem";
 import ProjectItem from "./ProjectItem";
-import CommingProjectCardItem from "./CommingProjectCardItem";
+import CommingProjectItem from "./CommingProjectItem";
 
 //interfaces
 import { IProjectItemData } from "@/interfaces/IData";
 
 const Work = () => {
-  const { projects }: { projects: IProjectItemData[] } = data;
+  const projects: IProjectItemData[] = data.projects;
 
   return (
     <div className={style.work}>
@@ -29,7 +29,7 @@ const Work = () => {
           return <ProjectItem key={projectItemData.id} data={projectItemData} />;
         })}
 
-        <CommingProjectCardItem />
+        <CommingProjectItem />
       </ul>
     </div>
   );

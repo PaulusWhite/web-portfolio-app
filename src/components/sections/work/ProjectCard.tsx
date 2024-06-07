@@ -17,11 +17,11 @@ interface IProjectCardPortalProps {
   closePortal: () => void;
 }
 
-const ProjectCardItem = (props: IProjectCardPortalProps) => {
+const ProjectCard = (props: IProjectCardPortalProps) => {
   const { title, img, desc, deploy, github, id } = props.data;
   const { itemCardRef, closePortal } = props;
 
-  const closeProjectCardItem = () => {
+  const closeProjectCard = () => {
     const itemCardNode: HTMLElement = itemCardRef.current!;
     itemCardNode.classList.remove(style.show);
 
@@ -39,14 +39,14 @@ const ProjectCardItem = (props: IProjectCardPortalProps) => {
   }, [id]);
 
   return (
-    <div className={style.sheet} onClick={closeProjectCardItem}>
+    <div className={style.sheet} onClick={closeProjectCard}>
       <aside
         ref={itemCardRef}
         className={`${style["project-card-portal"]} openPortal`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className={style.info}>
-          <Button extraClass={style["close-btn"]} clickAction={closeProjectCardItem}>
+          <Button extraClass={style["close-btn"]} clickAction={closeProjectCard}>
             Close
           </Button>
 
@@ -78,4 +78,4 @@ const ProjectCardItem = (props: IProjectCardPortalProps) => {
   );
 };
 
-export default ProjectCardItem;
+export default ProjectCard;

@@ -22,6 +22,7 @@ const DescriptionList = (props: IDescriptionListProps) => {
 
   useEffect(() => {
     const descListNode: HTMLDivElement = descListRef.current!;
+
     descListNode.classList.add(style.show);
   }, [props]);
 

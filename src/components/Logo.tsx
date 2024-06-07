@@ -17,7 +17,7 @@ const Logo = () => (
         displayMobileNav(true);
       }}
     >
-      <Image src="/logo.svg" width={35} height={35} alt="logo" />
+      <Image src="/logo.svg" priority width={35} height={35} alt="logo" />
       <span className={style["logo__label"]}>Exactly Paul</span>
     </Link>
 

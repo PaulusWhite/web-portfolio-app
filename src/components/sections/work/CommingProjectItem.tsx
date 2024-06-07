@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import style from "./../../../styles/modules/work/commingProjectCardItem.module.scss";
+import style from "./../../../styles/modules/work/commingProjectItem.module.scss";
 
-const CommingProjectCardItem = () => {
+const CommingProjectItem = () => {
   return (
     <div className={`${style["comming-project"]} fallInit`}>
       <Image src="/coding.jpg" fill={true} alt="coding" sizes="100%" />
@@ -12,4 +12,4 @@ const CommingProjectCardItem = () => {
   );
 };
 
-export default CommingProjectCardItem;
+export default CommingProjectItem;

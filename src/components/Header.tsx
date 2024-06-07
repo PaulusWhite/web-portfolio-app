@@ -15,7 +15,8 @@ const Header = () => {
   const headerRef = useRef(null);
 
   useEffect(() => {
-    const headerNode: unknown = headerRef.current;
+    const headerNode: HTMLDivElement = headerRef.current!;
+
     displayHeader(headerNode as HTMLDivElement);
   }, []);
 
