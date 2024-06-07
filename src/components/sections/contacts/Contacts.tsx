@@ -1,6 +1,9 @@
 //style
 import style from "./../../../styles/modules/contacts/contacts.module.scss";
 
+//contextProvider
+import FormContextProvider from "@/context/FormContextProvider";
+
 //components
 import ContactItem from "./ContactItem";
 import Form from "./Form";
@@ -9,7 +12,9 @@ const Contacts = () => {
   return (
     <div className={style.contacts}>
       <div className={style["form-field"]}>
-        <Form />
+        <FormContextProvider>
+          <Form />
+        </FormContextProvider>
 
         <div className={style.text}>
           <p className="ascentInit">

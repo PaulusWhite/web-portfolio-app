@@ -1,4 +1,4 @@
-import { useReducer, FormEvent, useState, useContext } from "react";
+import { FormEvent, useState, useContext } from "react";
 import { createPortal } from "react-dom";
 
 import style from "./../../../styles/modules/contacts/form.module.scss";
@@ -6,33 +6,27 @@ import style from "./../../../styles/modules/contacts/form.module.scss";
 //components
 import Button from "@/components/common/Button";
 import PopupPortal from "./PopupPortal";
+import InputField from "./InputField";
 
 //context
 import { LoaderContext } from "@/context/LoaderContextProvider";
+import { FormContext } from "@/context/FormContextProvider";
 
 //interfaces
-import { IValidationResult } from "@/scripts/formValidations";
+import { IValidationResult, IFormData } from "@/scripts/formValidations";
 import { IPostRequestBody } from "@/interfaces/IPostMessageByEmail";
 import { IResponseData } from "@/interfaces/IPostMessageByEmail";
 import { ILoaderContext } from "@/context/LoaderContextProvider";
+import { IFormContext } from "@/context/FormContextProvider";
 
 //scripts
 import { isFormDataValid } from "@/scripts/formValidations";
 
-//reducer
-import formReducer from "@/lib/formReducer";
-import { IReducerState } from "@/lib/formReducer";
-
-const INIT_REDUCER_STATE: IReducerState = {
-  nameValue: "",
-  mailValue: "",
-  messageValue: "",
-};
-
 const Form = () => {
-  const [state, dispatch] = useReducer(formReducer, INIT_REDUCER_STATE);
-  const { nameValue, mailValue, messageValue } = state;
   const { setIsSpinnerLoading } = useContext(LoaderContext) as ILoaderContext;
+  const { nameValue, emailValue, messageValue, changeValue } = useContext(
+    FormContext,
+  ) as IFormContext;
 
   const [isPopupMessage, setPopupMessage] = useState<boolean>(false);
   const [errorsArr, setErrors] = useState<false | string[]>(false);
@@ -41,7 +35,13 @@ const Form = () => {
   const submitForm = async (e: FormEvent) => {
     e.preventDefault();
 
-    const validationData: IValidationResult = isFormDataValid(state);
+    const formData: IFormData = {
+      nameValue,
+      emailValue,
+      messageValue,
+    };
+
+    const validationData: IValidationResult = isFormDataValid(formData);
     const { isValid, errors } = validationData;
 
     if (!isValid) {
@@ -54,7 +54,7 @@ const Form = () => {
 
     const requestBody: IPostRequestBody = {
       name: nameValue,
-      email: mailValue,
+      email: emailValue,
       message: messageValue,
     };
 
@@ -74,7 +74,7 @@ const Form = () => {
 
     setIsSpinnerLoading(false);
     setPopupMessage(true);
-    dispatch({ type: "reset", payload: "" });
+    changeValue("reset", "");
   };
 
   const closePopupPortal = () => {
@@ -88,26 +88,23 @@ const Form = () => {
       <form className={style.form} onSubmit={(e) => submitForm(e)}>
         <fieldset className={`${style.fieldset} unrolling-el`}>
           <h3>Write me a letter</h3>
-
-          <input
-            type="text"
-            placeholder="You Name"
+          <InputField
+            type="name"
             value={nameValue}
-            onChange={(e) => dispatch({ type: "name", payload: e.target.value })}
+            placeholder="Your Name"
+            changeValue={changeValue}
           />
-
-          <input
-            type="text"
-            placeholder="You Email"
-            value={mailValue}
-            onChange={(e) => dispatch({ type: "mail", payload: e.target.value })}
+          <InputField
+            type="email"
+            value={emailValue}
+            placeholder="Your Email"
+            changeValue={changeValue}
           />
-
-          <textarea
-            rows={10}
-            placeholder="Your Message"
+          <InputField
+            type="message"
             value={messageValue}
-            onChange={(e) => dispatch({ type: "message", payload: e.target.value })}
+            placeholder="Your Message"
+            changeValue={changeValue}
           />
 
           <Button>Get in touch</Button>
