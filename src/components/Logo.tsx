@@ -3,8 +3,7 @@ import Link from "next/link";
 
 import style from "./../styles/modules/logo.module.scss";
 
-import icon from "../../public/logo.svg";
-
+//scripts
 import displayMobileNav from "@/scripts/displayMobileNav";
 
 const Logo = () => (
@@ -18,7 +17,7 @@ const Logo = () => (
         displayMobileNav(true);
       }}
     >
-      <Image src={icon.src} width={35} height={35} alt="logo" />
+      <Image src="/logo.svg" width={35} height={35} alt="logo" />
       <span className={style["logo__label"]}>Exactly Paul</span>
     </Link>
 

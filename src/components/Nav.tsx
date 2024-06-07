@@ -14,6 +14,7 @@ const Nav = () => {
       <NavLink index={3} label="Experience" anchor="experience" />
       <NavLink index={4} label="Work" anchor="work" />
       <NavLink index={5} label="Contacts" anchor="contacts" />
+
       <Link href="/files/resume.pdf" target="_blank">
         <Button extraClass={`${style["resume-btn"]}`}>Resume</Button>
       </Link>

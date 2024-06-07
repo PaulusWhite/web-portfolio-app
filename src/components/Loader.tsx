@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useContext, useEffect, useRef } from "react";
-import { LoaderContext } from "@/app/ContextProvider";
 
 import style from "./../styles/modules/loader.module.scss";
 
-import { ILoaderContext } from "@/interfaces/IContext";
+//context
+import { LoaderContext, ILoaderContext } from "@/context/LoaderContextProvider";
 
 const Loader = () => {
   const { isLoading } = useContext(LoaderContext) as ILoaderContext;

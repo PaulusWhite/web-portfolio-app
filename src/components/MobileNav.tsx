@@ -2,6 +2,7 @@
 
 import style from "./../styles/modules/mobileNav.module.scss";
 
+//components
 import Nav from "./Nav";
 import Logo from "./Logo";
 

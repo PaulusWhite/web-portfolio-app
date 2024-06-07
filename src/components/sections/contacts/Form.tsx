@@ -8,8 +8,8 @@ import Button from "@/components/common/Button";
 import PopupPortal from "./PopupPortal";
 
 //context
-import { LoaderContext } from "@/app/ContextProvider";
-import { ILoaderContext } from "@/interfaces/IContext";
+import { LoaderContext } from "@/context/LoaderContextProvider";
+import { ILoaderContext } from "@/context/LoaderContextProvider";
 
 //interfaces
 import { IValidationResult } from "@/scripts/formValidations";

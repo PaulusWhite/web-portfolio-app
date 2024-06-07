@@ -1,10 +1,13 @@
 "use client";
 import { useContext, useEffect, useRef } from "react";
 
-import { LoaderContext } from "@/app/ContextProvider";
-import { ILoaderContext } from "@/interfaces/IContext";
-
 import style from "./../styles/modules/spinner.module.scss";
+
+//context
+import { LoaderContext } from "@/context/LoaderContextProvider";
+
+//interfaces
+import { ILoaderContext } from "@/context/LoaderContextProvider";
 
 const Spinner = () => {
   const { isSpinnerLoading } = useContext(LoaderContext) as ILoaderContext;

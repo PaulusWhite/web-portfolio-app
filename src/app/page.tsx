@@ -1,7 +1,5 @@
 "use client";
 import { useContext, useEffect } from "react";
-import { LoaderContext } from "./ContextProvider";
-import { ILoaderContext } from "@/interfaces/IContext";
 
 //Components
 import Section from "@/components/common/Section";
@@ -10,6 +8,12 @@ import Experience from "@/components/sections/experience/Experience";
 import Skills from "@/components/sections/skills/Skills";
 import Work from "@/components/sections/work/Work";
 import Contacts from "@/components/sections/contacts/Contacts";
+
+//context
+import { LoaderContext } from "../context/LoaderContextProvider";
+
+//interfaces
+import { ILoaderContext } from "../context/LoaderContextProvider";
 
 //scripts for start animations
 import setAscentEffect from "@/scripts/startAnimations/setAscentEffect";

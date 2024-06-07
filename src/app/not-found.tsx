@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useContext } from "react";
 
 import style from "./../styles/modules/errorPage.module.scss";
-import { useEffect, useContext } from "react";
 
 //Components
 import Button from "@/components/common/Button";
 
 //context
-import { LoaderContext } from "./ContextProvider";
-import { ILoaderContext } from "@/interfaces/IContext";
+import { LoaderContext } from "../context/LoaderContextProvider";
+
+//interfaces
+import { ILoaderContext } from "../context/LoaderContextProvider";
 
 const ErrorPage = () => {
   const { setIsLoading } = useContext(LoaderContext) as ILoaderContext;

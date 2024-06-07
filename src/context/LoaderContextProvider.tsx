@@ -1,7 +1,12 @@
 "use client";
 import { createContext, useState } from "react";
 
-import { ILoaderContext } from "@/interfaces/IContext";
+interface ILoaderContext {
+  isLoading: boolean;
+  isSpinnerLoading: boolean;
+  setIsLoading: (newValue: boolean) => void;
+  setIsSpinnerLoading: (newValue: boolean) => void;
+}
 
 const LoaderContext = createContext<ILoaderContext | null>(null);
 
@@ -20,3 +25,4 @@ const LoaderContextProvider = ({ children }: { children: React.ReactNode }) => {
 
 export default LoaderContextProvider;
 export { LoaderContext };
+export type { ILoaderContext };
