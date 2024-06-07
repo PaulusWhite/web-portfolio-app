@@ -1,5 +1,5 @@
 //data
-import data from "./../../../lib/data.json";
+import data from "./../../../data/data.json";
 
 import style from "./../../../styles/modules/skills/skills.module.scss";
 

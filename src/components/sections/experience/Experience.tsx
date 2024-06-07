@@ -4,7 +4,7 @@ import style from "./../../../styles/modules/experience/experience.module.scss";
 import descListStyle from "./../../../styles/modules/experience/description.module.scss";
 
 //data
-import data from "./../../../lib/data.json";
+import data from "./../../../data/data.json";
 
 //interfaces
 import { IDataRadioItem, IDataRadioValue } from "@/interfaces/IData";
