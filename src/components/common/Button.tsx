@@ -1,6 +1,6 @@
-import style from "./../../styles/modules/common/button.module.scss";
-
 import { ReactNode } from "react";
+
+import style from "./../../styles/modules/common/button.module.scss";
 
 interface IButtonProps {
   extraClass?: string;

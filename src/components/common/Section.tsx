@@ -1,8 +1,10 @@
-"use client";
-
 import style from "./../../styles/modules/common/section.module.scss";
-import { IHeadingProps } from "./Heading";
+
+//components
 import Heading from "./Heading";
+
+//interfaces
+import { IHeadingProps } from "./Heading";
 
 interface ISectionProps extends IHeadingProps {
   content: React.ReactNode;

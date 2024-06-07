@@ -1,10 +1,6 @@
-"use client";
-
-import style from "./../../styles/modules/about.module.scss";
 import Image from "next/image";
 
-//Images
-import photo from "./../../../public/photo.jpg";
+import style from "./../../styles/modules/about.module.scss";
 
 const About = () => {
   return (
@@ -29,7 +25,7 @@ const About = () => {
 
       <div className={`${style["photo-frame"]} fallInit`}>
         <Image
-          src={photo.src}
+          src="/photo.jpg"
           alt="my-photo"
           fill={true}
           sizes="100%"

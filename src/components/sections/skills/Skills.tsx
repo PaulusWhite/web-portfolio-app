@@ -1,5 +1,4 @@
-"use client";
-
+//data
 import data from "./../../../lib/data.json";
 
 import style from "./../../../styles/modules/skills/skills.module.scss";

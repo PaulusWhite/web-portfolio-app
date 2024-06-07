@@ -9,15 +9,17 @@ import PopupPortal from "./PopupPortal";
 
 //context
 import { LoaderContext } from "@/context/LoaderContextProvider";
-import { ILoaderContext } from "@/context/LoaderContextProvider";
 
 //interfaces
 import { IValidationResult } from "@/scripts/formValidations";
 import { IPostRequestBody } from "@/interfaces/IPostMessageByEmail";
 import { IResponseData } from "@/interfaces/IPostMessageByEmail";
+import { ILoaderContext } from "@/context/LoaderContextProvider";
 
+//scripts
 import { isFormDataValid } from "@/scripts/formValidations";
 
+//reducer
 import formReducer from "@/lib/formReducer";
 import { IReducerState } from "@/lib/formReducer";
 

@@ -1,6 +1,5 @@
-"use client";
-
 import { useState, useRef } from "react";
+
 import style from "./../../../styles/modules/experience/experience.module.scss";
 import descListStyle from "./../../../styles/modules/experience/description.module.scss";
 

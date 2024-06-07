@@ -1,6 +1,6 @@
-import style from "./../../../styles/modules/contacts/contactItem.module.scss";
-
 import Image from "next/image";
+
+import style from "./../../../styles/modules/contacts/contactItem.module.scss";
 
 interface IContactItemProps {
   logo: string;
