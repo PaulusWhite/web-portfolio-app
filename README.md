@@ -5,6 +5,7 @@ This is my personal web site where you can get acquainted with me. Here you will
 
 ## Stack
 - NextJS
+- TypeScript
 - SASS
 
 ### Getting Started
