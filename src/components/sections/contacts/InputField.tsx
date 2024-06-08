@@ -1,5 +1,3 @@
-"use client";
-
 //interfaces
 import { TType } from "@/context/FormContextProvider";
 

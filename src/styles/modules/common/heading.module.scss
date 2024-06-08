@@ -1,5 +1,17 @@
 @import "./../../common.scss";
 
+@mixin commonInit {
+  position: relative;
+  bottom: 0;
+  transform: rotate(0);
+  transition: 0.8s ease-in-out;
+}
+
+@mixin commonFinal {
+  transform: rotate(-15deg);
+  bottom: -6rem;
+}
+
 .heading {
   display: flex;
   align-items: center;
@@ -8,24 +20,17 @@
   font-size: 2rem;
   opacity: 1;
   overflow: hidden;
-
   transition: 2s;
 
   .index {
-    position: relative;
-    bottom: 0;
-    transform: rotate(0);
+    @include commonInit;
     margin-right: 1rem;
     color: $secondColor;
     font-size: 1rem;
-    transition: 0.8s ease-in-out;
   }
 
   .label {
-    position: relative;
-    bottom: 0;
-    transform: rotate(0);
-    transition: 0.8s ease-in-out;
+    @include commonInit;
   }
 
   &::after {
@@ -40,7 +45,6 @@
 }
 
 //css mods for start animations
-
 .hide-heading-line {
   &::after {
     content: "";
@@ -50,13 +54,11 @@
 
 .hide-heading-labels {
   .index {
-    transform: rotate(-15deg);
-    bottom: -6rem;
+    @include commonFinal;
   }
 
   .label {
-    transform: rotate(-15deg);
-    bottom: -6rem;
+    @include commonFinal;
   }
 }
 

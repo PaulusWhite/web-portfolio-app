@@ -13,7 +13,6 @@
   .project-card-portal {
     @include flexColumn;
     position: absolute;
-    z-index: 5;
     right: -30rem;
     width: 30rem;
     min-height: 100vh;
