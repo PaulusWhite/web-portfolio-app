@@ -24,8 +24,7 @@ const isFormDataValid = (data: IFormData): IValidationResult => {
   const { nameValue, emailValue, messageValue } = data;
 
   if (!nameValue.length) errors.push(`${COMMON_ERROR_TEXT} name`);
-  if (emailValue && !isMailInputValid(emailValue.trim()))
-    errors.push("Email you entered is not correct");
+  if (emailValue && !isMailInputValid(emailValue.trim())) errors.push("Email you entered is not correct");
   if (!emailValue.length) errors.push(`${COMMON_ERROR_TEXT} mail`);
   if (!messageValue.length) errors.push(`${COMMON_ERROR_TEXT} message`);
 
