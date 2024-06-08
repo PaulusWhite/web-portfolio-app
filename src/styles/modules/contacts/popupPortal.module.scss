@@ -2,7 +2,7 @@
 
 .popupPortal {
   @include flexColumn;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   position: fixed;
   z-index: 3;
@@ -45,7 +45,7 @@
     padding: 1rem 0.5rem;
 
     span {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
     }
   }
 }
