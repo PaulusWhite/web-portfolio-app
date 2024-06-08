@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { MutableRefObject, useEffect } from "react";
 
@@ -69,10 +70,12 @@ const ProjectCard = (props: IProjectCardPortalProps) => {
           <SourceLink link={github} type="Github" />
         </div>
 
-        <Button extraClass={style["deploy-link"]}>
-          Open the project
-          <Image src="/open.svg" width={25} height={25} alt="link icon" />
-        </Button>
+        <Link href={deploy} target="_blank">
+          <Button extraClass={style["deploy-link"]}>
+            Open the project
+            <Image src="/open.svg" width={25} height={25} alt="link icon" />
+          </Button>
+        </Link>
       </aside>
     </div>
   );

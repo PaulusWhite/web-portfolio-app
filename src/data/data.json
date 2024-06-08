@@ -252,7 +252,7 @@
         "technical": ["NextJS", "SASS", "CSS Modules"]
       },
       "github": "https://github.com/PaulusWhite/web-portfolio-app",
-      "deploy": ""
+      "deploy": "https://exactlypaul.vercel.app/"
     }
   ]
 }

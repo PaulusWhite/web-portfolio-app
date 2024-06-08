@@ -4,6 +4,8 @@ import style from "./../../../styles/modules/contacts/contacts.module.scss";
 //contextProvider
 import FormContextProvider from "@/context/FormContextProvider";
 
+// import s from "./../../../../public/files/resume.pdf"
+
 //components
 import ContactItem from "./ContactItem";
 import Form from "./Form";
@@ -35,7 +37,7 @@ const Contacts = () => {
         <ul className={style["contacts-list"]}>
           <ContactItem logo="/contacts/in.svg" link="https://www.linkedin.com/in/exactlypaul/" />
           <ContactItem logo="/contacts/github.svg" link="https://github.com/PaulusWhite" />
-          <ContactItem logo="/contacts/resume.svg" link="" />
+          <ContactItem logo="/contacts/resume.svg" link="/files/resume.pdf" />
         </ul>
         <p className={style.inbox}>
           My inbox: <a href="mailto:exactlypaulus@gmail.com">exactlypaulus@gmail.com</a>
